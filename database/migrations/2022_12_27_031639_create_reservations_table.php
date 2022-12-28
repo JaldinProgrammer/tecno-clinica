@@ -19,6 +19,7 @@ class CreateReservationsTable extends Migration
             $table->string('description');
             $table->time('time');
             $table->foreignId('user_id')->constrained('users');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

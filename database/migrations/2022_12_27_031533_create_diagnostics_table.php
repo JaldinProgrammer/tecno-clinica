@@ -19,6 +19,7 @@ class CreateDiagnosticsTable extends Migration
             $table->string('description');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('disease_id')->constrained('diseases');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

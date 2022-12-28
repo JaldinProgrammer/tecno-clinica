@@ -17,6 +17,9 @@ class CreatePromotionsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+            $table->date('from');
+            $table->date('to');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ class CreateDatesTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('reservation_id')->constrained('reservations');
             $table->foreignId('diagnostic_id')->constrained('diagnostics');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

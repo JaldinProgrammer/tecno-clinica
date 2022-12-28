@@ -16,6 +16,7 @@ class CreateDiseasesTable extends Migration
         Schema::create('diseases', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
