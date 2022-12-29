@@ -65,4 +65,8 @@ class User extends Authenticatable
     {
         return  $this->hasMany(Date::class);
     }
+
+    public function getAll(){
+        return User::all();
+    }
 }

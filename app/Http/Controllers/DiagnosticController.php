@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DiagnosticController extends Controller
 {
-    private $diagnosticModel;
+    private Diagnostic $diagnosticModel;
 
     public function __construct(Diagnostic $entity)
     {
