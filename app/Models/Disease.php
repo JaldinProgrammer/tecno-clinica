@@ -23,5 +23,5 @@ class Disease extends Model
     public function getAll(){
         return Disease::where('status',1)->get();
     }
-
+ //comment 1
 }
