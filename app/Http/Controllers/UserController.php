@@ -18,5 +18,6 @@ class UserController extends Controller
         $users = $this->userModel->getAll();
         return view('users.index', compact('users'));
     }
+    // test
 
 }
