@@ -5,6 +5,7 @@ use App\Http\Controllers\SpecialitiesController;
 use App\Http\Controllers\DiseasesController;
 use App\Http\Controllers\PromotionsController;
 use App\Http\Controllers\DoctorSpecialitiesController;
+use App\Http\Controllers\KeysController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +54,11 @@ Route::post('storedoc',[DoctorSpecialitiesController::class, 'store']);
 Route::get('editdoc/{id}',[DoctorSpecialitiesController::class, 'edit']);
 Route::post('updatedoc',[DoctorSpecialitiesController::class, 'update'])->name('updatedoc');
 Route::get('deletedoc/{id}',[DoctorSpecialitiesController::class, 'delete']);
+
+//keys routes
+
+Route::get('indexkey', [KeysController::class, 'index']);
+Route::post('storekey',[KeysController::class, 'store']);
+Route::get('editkey/{id}',[KeysController::class, 'edit']);
+Route::post('updatekey',[KeysController::class, 'update'])->name('updatekey');
+Route::get('deletekey/{id}',[KeysController::class, 'delete']);
