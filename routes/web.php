@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiagnosticController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/unauthorized', [App\Http\Controllers\HomeController::class, 'unauthorized'])->name('unauthorized');
 
 Route::prefix('user')->group(function () {
-    Route::get('index', [UserController::class, 'index'])->name('user.index');
+    Route::get('index', [UserController::class, 'index'])->name('user.index')->middleware(['admin', 'doctor']);
+});
+
+Route::prefix('diagnostic')->group(function () {
+    Route::get('create', [DiagnosticController::class, 'create'])->name('diagnostic.create')->middleware(['admin', 'doctor']);
+    Route::get('index', [DiagnosticController::class, 'index'])->name('diagnostic.index')->middleware(['admin', 'doctor']);
 });

@@ -11,4 +11,14 @@ class Log extends Model
 
     //protected $fillable = [];
     protected $dates = ['created_at', 'updated_at'];
+
+    public function bookSession(){
+        return Log::create([]);
+    }
+
+    public static function showViews(){
+        return Log::all()->count();
+    }
+
+
 }

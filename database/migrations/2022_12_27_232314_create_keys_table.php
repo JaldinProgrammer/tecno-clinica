@@ -17,6 +17,7 @@ class CreateKeysTable extends Migration
             $table->id();
             $table->string('key');
             $table->foreignId('table_id')->constrained('tables');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

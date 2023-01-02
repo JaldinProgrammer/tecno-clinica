@@ -17,6 +17,7 @@ class CreateTablesTable extends Migration
             $table->id();
             $table->string('table');
             $table->string('route');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

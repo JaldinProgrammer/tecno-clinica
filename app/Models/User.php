@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -68,5 +69,16 @@ class User extends Authenticatable
 
     public function getAll(){
         return User::all();
+    }
+
+    public function udpate(Request $request, $id){
+        $User = User::findOrFail($id);
+        $User->name = $request->get('name');
+        $User->cellphone = $request->get('cellphone');
+        $User->ci = $request->get('ci');
+        $User->is_doctor = $request->get('is_doctor');
+        $User->is_admin = $request->get('is_admin');
+        $User->email = $request->get('email');
+        $User->update();
     }
 }

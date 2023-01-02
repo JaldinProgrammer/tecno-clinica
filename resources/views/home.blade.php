@@ -14,8 +14,15 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        {{ __('You are logged in!...') }}
+                            @can('admin')
+                                <h1>Hola soy el admin</h1>
+                            @endcan
+                            @can('doctor')
+                                <h1>Hola soy el doctor</h1>
+                            @endcan
                     </div>
+
                 </div>
             </div>
         </div>

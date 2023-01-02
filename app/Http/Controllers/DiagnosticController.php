@@ -14,6 +14,14 @@ class DiagnosticController extends Controller
         $this->diagnosticModel = $entity;
     }
 
+    public function create(Request $request){
+        try {
+            return view('diagnostic.create');
+        } catch (\Exception $e) {
+            echo $e;
+        }
+    }
+
     public function store(Request $request){
         try {
             $this->diagnosticModel->store($request);
@@ -24,7 +32,8 @@ class DiagnosticController extends Controller
 
     public function index(){
         try {
-            $this->diagnosticModel->index();
+            $diagnostics = $this->diagnosticModel->index();
+            return view('diagnostics.index', compact('diagnostics'));
         } catch (\Exception $e) {
             echo $e;
         }

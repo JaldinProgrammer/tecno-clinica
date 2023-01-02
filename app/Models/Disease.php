@@ -20,5 +20,8 @@ class Disease extends Model
         return  $this->hasMany(Diagnostic::class);
     }
 
+    public function getAll(){
+        return Disease::where('status',1)->get();
+    }
 
 }
