@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpecialitiesController;
 use App\Http\Controllers\DiseasesController;
+use App\Http\Controllers\PromotionsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,10 @@ Route::post('storedis',[DiseasesController::class, 'store']);
 Route::get('editdis/{id}',[DiseasesController::class, 'edit']);
 Route::post('updatedis',[DiseasesController::class, 'update'])->name('updatedis');
 Route::get('deletedis/{id}',[DiseasesController::class, 'delete']);
+
+//promotions routes
+Route::get('indexpro', [PromotionsController::class, 'index']);
+Route::post('storepro',[PromotionsController::class, 'store']);
+Route::get('editpro/{id}',[PromotionsController::class, 'edit']);
+Route::post('updatepro',[PromotionsController::class, 'update'])->name('updatepro');
+Route::get('deletepro/{id}',[PromotionsController::class, 'delete']);
