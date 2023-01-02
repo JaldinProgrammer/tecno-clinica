@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpecialitiesController;
+use App\Http\Controllers\DiseasesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +24,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Route::resource('specilities','App\Http\Controllers\SpecialitiesController');
 
+//specilities routes
 Route::get('inputspe', [SpecialitiesController::class, 'index']);
 Route::post('store',[SpecialitiesController::class, 'store']);
 Route::get('edit/{id}',[SpecialitiesController::class, 'edit']);
 Route::post('update',[SpecialitiesController::class, 'update'])->name('update');
 Route::get('delete/{id}',[SpecialitiesController::class, 'delete']);
+//diseases routes
+
+Route::get('indexdis', [DiseasesController::class, 'index']);
+Route::post('storedis',[DiseasesController::class, 'store']);
+Route::get('editdis/{id}',[DiseasesController::class, 'edit']);
+Route::post('updatedis',[DiseasesController::class, 'update'])->name('updatedis');
+Route::get('deletedis/{id}',[DiseasesController::class, 'delete']);
