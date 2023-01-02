@@ -14,7 +14,7 @@
 <div class="container">
 <div class="row justify-content-center">
  <div class="col-md-6 col-md-offset-3">
- <h4>Specialities</h4>
+    <h4>{{$Title}} | specialities</h4>
     <hr>
     @if(Session::get('success'))
         <div class="alert alert-success">
@@ -27,18 +27,19 @@
         </div>
     @endif
 
-    <form action="store" method="post">
+    <form action="{{route('update')}}" method="post">
     @csrf 
+        <input type="hidden" name="cid" value="{{ $Info->id }}">
      
         <div class="form-group">
             <label for=""> name</label>
-            <input type="text" class="form-control" name="name" value= "{{old('name')}}">
+            <input type="text" class="form-control" name="name" value= "{{$Info->name}}">
             <span style="color:red">@error ('name'){{$message}} @enderror</span>
         </div>
 
         <div class="form-group">
             <label for=""> status</label>
-            <input type="text" class="form-control" name="status"value= "{{old('status')}}">
+            <input type="text" class="form-control" name="status"value= "{{$Info->status}}">
             <span style="color:red">@error ('status'){{$message}} @enderror</span>
 
         </div>
@@ -46,36 +47,13 @@
         <hr>
         <div class="form-group">
             
-            <button type="submit" class="btn btn-success">Save</button>
+            <button type="submit" class="btn btn-success">Update</button>
         </div>
     </form>
 
     <br>
 
-    <table class="table table-hover">
-        <thead>
-            <th>id</th>
-            <th>Name</th>
-            <th>Status</th>
-        </thead>
-
-        <tbody>
-            @foreach($list as $item)
-            <tr>
-                <td>{{$item->id}}</td>
-                <td>{{$item->name}}</td>
-                <td>{{$item->status}}</td>
-                <td>
-                    <div class="btn-group">
-                        <a href="delete/{{$item->id}}" class="btn btn-danger btn-xs">delete</a>
-                        <a href="edit/{{ $item->id}}" class="btn btn-primary btn-xs">edit</a>
-                    </div>
-                </td>
-            </tr>
-           
-           @endforeach 
-        </tbody>
-    </table>
+   
 
  </div>    
 </div>

@@ -25,3 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('inputspe', [SpecialitiesController::class, 'index']);
 Route::post('store',[SpecialitiesController::class, 'store']);
+Route::get('edit/{id}',[SpecialitiesController::class, 'edit']);
+Route::post('update',[SpecialitiesController::class, 'update'])->name('update');
+Route::get('delete/{id}',[SpecialitiesController::class, 'delete']);

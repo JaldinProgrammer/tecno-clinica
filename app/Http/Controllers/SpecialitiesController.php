@@ -16,7 +16,10 @@ class SpecialitiesController extends Controller
     public function index()
     {
         //
-        return view('Specialities.inputspecialities');
+        $data =array(
+            'list'=>DB::table('specialities')->get()
+        );
+        return view('Specialities.inputspecialities',$data);
 
     }
 
@@ -62,10 +65,12 @@ class SpecialitiesController extends Controller
      * @param  \App\Models\specialities  $specialities
      * @return \Illuminate\Http\Response
      */
-    public function show(specialities $specialities)
+    public function delete($id)
     {
-        //
-        
+        $delete = DB::table('specialities')
+                        ->where('id',$id)
+                        ->delete();
+        return redirect('inputspe');
     }
 
     /**
@@ -74,9 +79,16 @@ class SpecialitiesController extends Controller
      * @param  \App\Models\specialities  $specialities
      * @return \Illuminate\Http\Response
      */
-    public function edit(specialities $specialities)
+    public function edit($id)
     {
-        //
+        $row = DB::table('specialities')
+                    ->where('id',$id)
+                    ->first();
+        $data = [
+            'Info'=>$row,
+            'Title'=>'Edit'
+        ];
+        return view('Specialities.edit',$data);
     }
 
     /**
@@ -88,7 +100,18 @@ class SpecialitiesController extends Controller
      */
     public function update(Request $request, specialities $specialities)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'status'=>'required'
+        ]);
+        $updating= DB::table('specialities')
+                    ->where('id', $request->input('cid'))
+                    ->update([
+                        'name'=>$request->input('name'),
+                        'status'=>$request->input('status')
+                    
+                    ]);
+        return redirect('inputspe');
     }
 
     /**
