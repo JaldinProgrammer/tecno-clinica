@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpecialitiesController;
 use App\Http\Controllers\DiseasesController;
 use App\Http\Controllers\PromotionsController;
+use App\Http\Controllers\DoctorSpecialitiesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,3 +46,10 @@ Route::post('storepro',[PromotionsController::class, 'store']);
 Route::get('editpro/{id}',[PromotionsController::class, 'edit']);
 Route::post('updatepro',[PromotionsController::class, 'update'])->name('updatepro');
 Route::get('deletepro/{id}',[PromotionsController::class, 'delete']);
+
+//doctor_specialites routes
+Route::get('indexdoc', [DoctorSpecialitiesController::class, 'index']);
+Route::post('storedoc',[DoctorSpecialitiesController::class, 'store']);
+Route::get('editdoc/{id}',[DoctorSpecialitiesController::class, 'edit']);
+Route::post('updatedoc',[DoctorSpecialitiesController::class, 'update'])->name('updatedoc');
+Route::get('deletedoc/{id}',[DoctorSpecialitiesController::class, 'delete']);
