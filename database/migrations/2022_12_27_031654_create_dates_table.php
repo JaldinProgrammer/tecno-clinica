@@ -20,7 +20,10 @@ class CreateDatesTable extends Migration
             $table->time('time');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('reservation_id')->constrained('reservations');
-            $table->foreignId('diagnostic_id')->constrained('diagnostics');
+            $table->unsignedBigInteger('diagnostic_id')->nullable();
+            $table->foreign('diagnostic_id')->references('id')->on('diagnostics');
+
+//            $table->foreignId('diagnostic_id')->constrained('diagnostics')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

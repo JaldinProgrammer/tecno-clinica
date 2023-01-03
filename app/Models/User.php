@@ -81,4 +81,8 @@ class User extends Authenticatable
         $User->email = $request->get('email');
         $User->update();
     }
+
+    public function getById($id){
+        return User::findOrFail($id);
+    }
 }

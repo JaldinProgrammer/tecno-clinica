@@ -86,10 +86,11 @@
   }
 }
 
-.prueba{
+.prueba {
     color: red;
     background: var(--bs-info) !important;
 }
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

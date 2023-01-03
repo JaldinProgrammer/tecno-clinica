@@ -53,13 +53,29 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('diagnostic.index') }}">Diagnostico</a>
-                        </li>
-                        <li class="nav-item dropdown">
+                        @can('patient')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('reservation.show', Auth::user()->id) }}">Mis reservas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('date.show', Auth::user()->id) }}">Mis citas</a>
+                            </li>
+                        @endcan
+                        @canany(['admin','doctor'])
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('diagnostic.index') }}">Diagnostico</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('reservation.index') }}">Lista de reservaciones</a>
+                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
+                                </li>
+                        @endcanany
+                            <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>

@@ -17,7 +17,7 @@ class DoctorMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->is_doctor == 1 && Auth::user()->status == 1)
+        if (Auth::check() && (Auth::user()->is_doctor == 1 || Auth::user()->is_admin == 1) && Auth::user()->status == 1)
             return $next($request);
         return redirect()->route('unauthorized');
     }

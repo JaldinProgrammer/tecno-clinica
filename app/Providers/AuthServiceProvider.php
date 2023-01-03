@@ -43,5 +43,25 @@ class AuthServiceProvider extends ServiceProvider
                 ->get();
             return ( sizeof($userType) != 0);
         });
+
+        Gate::define('patient', function($user){
+            $userType = DB::table('users')
+                ->where('id',$user->id)
+                ->where('is_doctor',0)
+                ->where('is_admin',0)
+                ->where('status',1)
+                ->get();
+            return ( sizeof($userType) != 0);
+        });
+
+        Gate::define('adminOrDoctor', function($user){
+            $userType = DB::table('users')
+                ->where('id',$user->id)
+                ->where('is_doctor',1)
+                ->Orwhere('is_admin',1)
+                ->where('status',1)
+                ->get();
+            return ( sizeof($userType) != 0);
+        });
     }
 }

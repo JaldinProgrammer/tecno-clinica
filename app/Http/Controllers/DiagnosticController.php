@@ -2,31 +2,56 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Date;
 use App\Models\Diagnostic;
+use App\Models\Disease;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DiagnosticController extends Controller
 {
     private Diagnostic $diagnosticModel;
-
-    public function __construct(Diagnostic $entity)
+    private Disease $diseaseModel;
+    private User $userModel;
+    private Date $dateModel;
+    public function __construct(Diagnostic $entityDiagnostic, Disease $entityDisease, User $entityUser, Date $entityDate)
     {
-        $this->diagnosticModel = $entity;
+        $this->diagnosticModel = $entityDiagnostic;
+        $this->diseaseModel =  $entityDisease;
+        $this->userModel = $entityUser;
+        $this->dateModel = $entityDate;
     }
 
-    public function create(Request $request){
+    public function create($id){
         try {
-            return view('diagnostic.create');
+            $user = $this->userModel->getById($id);
+            $diseases = $this->diseaseModel->getAll();
+            return view('diagnostics.create', compact('diseases'), compact('user'));
         } catch (\Exception $e) {
-            echo $e;
+            return view('error', compact('e'));
         }
     }
 
-    public function store(Request $request){
+    public function createFromDate($id, $date){
         try {
-            $this->diagnosticModel->store($request);
+            $user = $this->userModel->getById($id);
+            $diseases = $this->diseaseModel->getAll();
+            //$this->dateModel->setDiagnostic($id, $date);
+            return view('diagnostics.create', compact('diseases'), compact('user'))->with("date",$date);
         } catch (\Exception $e) {
-            echo $e;
+            return view('error', compact('e'));
+        }
+    }
+
+    public function store(Request $request, $date=0){
+        try {
+            $diagnostic = $this->diagnosticModel->store($request);
+            if ($date!=0){
+                $this->dateModel->setDiagnostic($diagnostic->id, $date);
+            }
+            return redirect()->route('diagnostic.index');
+        } catch (\Exception $e) {
+            return view('error', compact('e'));
         }
     }
 
@@ -35,7 +60,7 @@ class DiagnosticController extends Controller
             $diagnostics = $this->diagnosticModel->index();
             return view('diagnostics.index', compact('diagnostics'));
         } catch (\Exception $e) {
-            echo $e;
+            return view('error', compact('e'));
         }
     }
 

@@ -21,6 +21,9 @@
                             @can('doctor')
                                 <h1>Hola soy el doctor</h1>
                             @endcan
+                            @can('patient')
+                                <h1>Hola soy el paciente</h1>
+                            @endcan
                     </div>
 
                 </div>

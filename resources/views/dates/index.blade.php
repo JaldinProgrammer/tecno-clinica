@@ -12,22 +12,38 @@
     <div class="p-5" >
         <table class="table table-striped" id="table">
             <thead>
-            <th class="prueba">id</th>
-            <th class="prueba">Nombre</th>
-            <th>Celular</th>
-            <th>Identificacion</th>
-            <th>Servicios</th>
+            <th>id</th>
+            <th>Descripcion</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            @can('patient')
+                <th>Doctor</th>
+            @endcan
+            @canany(['doctor','admin'])
+                <th>Paciente</th>
+                <th>Servicio</th>
+            @endcanany
             </thead>
             <tbody>
-            @foreach ($users as $item)
+            @foreach ($dates as $item)
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td>{{$item->name}}</td>
-                    <td>{{$item->cellphone}}</td>
-                    <td>{{$item->ci}}</td>
-                    <td>
-                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
-                    </td>
+                    <td>{{$item->description}}</td>
+                    <td>{{$item->date}}</td>
+                    <td>{{$item->time}}</td>
+                    @can('patient')
+                        <td>{{$item->DoctorName}}</td>
+                    @endcan
+                    @canany(['doctor','admin'])
+                        <td>{{$item->patientName}}</td>
+                        <td>
+                            @if($item->diagnosticId ==  null)
+                                <a href="{{ route('diagnostic.createFromDate',[ $item->patientId, $item->id]) }}"><button type="button" class="btn btn-success btn-lg btn-block">Diagnosticar</button></a>
+                            @else
+                                <h2>Cita concretada</h2>
+                            @endif
+                        </td>
+                    @endcanany
                 </tr>
             @endforeach
             </tbody>

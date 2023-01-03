@@ -10,23 +10,39 @@
         </div>
     @endif
     <div class="p-5" >
-{{--        <a href="{{route('diagnostic.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">Crear diagnostico</button></a>--}}
+        <a href="{{route('reservation.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">Crear reservacion</button></a>
         <table class="table table-striped" id="table">
             <thead>
             <th>id</th>
-            <th>Titulo</th>
             <th>Descripcion</th>
-            <th>Usuario</th>
-            <th>Enfermedad</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Servicios</th>
             </thead>
             <tbody>
-            @foreach ($diagnostics as $item)
+            @foreach ($reservations as $item)
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td>{{$item->title}}</td>
                     <td>{{$item->description}}</td>
-                    <td>{{$item->user->name}}</td>
-                    <td>{{$item->disease->name}}</td>
+                    <td>{{$item->date}}</td>
+                    <td>{{$item->time}}</td>
+                    @can('patient')
+                        <td>
+                            <a href="{{ route('reservation.delete', $item->id) }}"><button type="button" class="btn btn-danger">Dar de baja</button></a>
+                        </td>
+                    @endcan
+                    @can(['admin'])
+                        <td>
+                            <a href="{{ route('date.create', $item->id) }}"><button type="button" class="btn btn-success">Aceptar la reservacion</button></a>
+                        </td>
+                    @elsecan
+                        @can(['doctor'])
+                            <td>
+                                <a href="{{ route('date.create', $item->id) }}"><button type="button" class="btn btn-success">Aceptar la reservacion</button></a>
+                            </td>
+                        @endcan
+                    @endcan
+
                 </tr>
             @endforeach
             </tbody>

@@ -42,7 +42,7 @@ class Diagnostic extends Model
             'disease_id' => ['required']
         ]);
 
-        Diagnostic::create([
+        return Diagnostic::create([
             'title' => $request['title'],
             'description' => $request['description'],
             'disease_id' => $request['disease_id'],
