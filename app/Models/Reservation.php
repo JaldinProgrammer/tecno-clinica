@@ -34,7 +34,8 @@ class Reservation extends Model
     }
 
     public function getAllReservation(){
-        return Reservation::where('status',1)->get();
+        $reservationDated = Date::select('reservation_id')->where('status',1)->get();
+        return Reservation::where('status',1)->whereNotIn('id',$reservationDated)->get();
     }
 
     public function store(Request $request){

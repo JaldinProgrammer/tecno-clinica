@@ -19,11 +19,7 @@ class ReservationController extends Controller
     }
 
     public function create(){
-        try {
-            return view('reservations.create');
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        return view('reservations.create');
     }
 
     public function store(Request $request){
@@ -32,29 +28,17 @@ class ReservationController extends Controller
     }
 
     public function index(){
-        try {
-            $reservations = $this->reservationModel->getAllReservation();
-            return view('reservations.index', compact('reservations'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $reservations = $this->reservationModel->getAllReservation();
+        return view('reservations.index', compact('reservations'));
     }
 
     public function show($id){
-        try {
-            $reservations = $this->reservationModel->getByUser($id);
-            return view('reservations.index', compact('reservations'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $reservations = $this->reservationModel->getByUser($id);
+        return view('reservations.index', compact('reservations'));
     }
 
     public function delete($id){
-        try {
-            $userId = $this->reservationModel->deleteReservation($id);
-            return redirect()->route('reservation.show',$userId);
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $userId = $this->reservationModel->deleteReservation($id);
+        return redirect()->route('reservation.show',$userId);
     }
 }

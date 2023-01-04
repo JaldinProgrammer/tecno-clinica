@@ -21,32 +21,18 @@ class DateController extends Controller
     }
 
     public function index($id){ //doctor
-        try {
-            $dates = $this->dateModel->getByDoctor($id);
-//            dd($dates);
-            return view('dates.index', compact('dates'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $dates = $this->dateModel->getByDoctor($id);
+        return view('dates.index', compact('dates'));
     }
 
     public function show($id){ //patient
-        try {
-            $dates = $this->dateModel->getByPatient($id);
-//            dd($dates);
-            return view('dates.index', compact('dates'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $dates = $this->dateModel->getByPatient($id);
+        return view('dates.index', compact('dates'));
     }
 
     public function create($id){
-        try {
-            $reservation = $this->reservationModel->getReservation($id);
-            return view('dates.create', compact('reservation'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $reservation = $this->reservationModel->getReservation($id);
+        return view('dates.create', compact('reservation'));
     }
 
     public function store(Request $request){

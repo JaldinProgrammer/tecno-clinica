@@ -62,10 +62,10 @@
                             </li>
                         @endcan
                         @canany(['admin','doctor'])
-                            <form class="form-inline my-2 my-lg-0">
+                            <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
                                 @csrf
                                 <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                             </form>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
@@ -79,6 +79,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
                             </li>
+                             <li class="nav-item dropdown">
+                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Reportes
+                                 </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Reporte 1</a>
+                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Reporte 2</a>
+                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Reporte 3</a>
+                                 </div>
+                             </li>
                         @endcanany
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

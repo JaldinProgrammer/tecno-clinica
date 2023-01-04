@@ -3,6 +3,7 @@
 use App\Http\Controllers\DateController;
 use App\Http\Controllers\DiagnosticController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/unauthorized', [App\Http\Controllers\HomeController::class, 'unauthorized'])->name('unauthorized');
+Route::post('/search', [TableController::class, 'search'])->name('search')->middleware(['admin', 'doctor']);
+
 
 Route::prefix('user')->group(function () {
     Route::get('index', [UserController::class, 'index'])->name('user.index')->middleware(['admin', 'doctor']);

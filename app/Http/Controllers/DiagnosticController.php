@@ -23,52 +23,31 @@ class DiagnosticController extends Controller
     }
 
     public function create($id){
-        try {
-            $user = $this->userModel->getById($id);
-            $diseases = $this->diseaseModel->getAll();
-            return view('diagnostics.create', compact('diseases'), compact('user'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $user = $this->userModel->getById($id);
+        $diseases = $this->diseaseModel->getAll();
+        return view('diagnostics.create', compact('diseases'), compact('user'));
     }
 
     public function createFromDate($id, $date){
-        try {
-            $user = $this->userModel->getById($id);
-            $diseases = $this->diseaseModel->getAll();
-            //$this->dateModel->setDiagnostic($id, $date);
-            return view('diagnostics.create', compact('diseases'), compact('user'))->with("date",$date);
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $user = $this->userModel->getById($id);
+        $diseases = $this->diseaseModel->getAll();
+        return view('diagnostics.create', compact('diseases'), compact('user'))->with("date",$date);
     }
 
     public function store(Request $request, $date=0){
-        try {
-            $diagnostic = $this->diagnosticModel->store($request);
-            if ($date!=0){
-                $this->dateModel->setDiagnostic($diagnostic->id, $date);
-            }
-            return redirect()->route('diagnostic.index');
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
+        $diagnostic = $this->diagnosticModel->store($request);
+        if ($date!=0){
+            $this->dateModel->setDiagnostic($diagnostic->id, $date);
         }
+        return redirect()->route('diagnostic.index');
     }
 
     public function index(){
-        try {
-            $diagnostics = $this->diagnosticModel->index();
-            return view('diagnostics.index', compact('diagnostics'));
-        } catch (\Exception $e) {
-            return view('error', compact('e'));
-        }
+        $diagnostics = $this->diagnosticModel->index();
+        return view('diagnostics.index', compact('diagnostics'));
     }
 
     public function show($id){
-        try {
-            $this->diagnosticModel->show($id);
-        } catch (\Exception $e) {
-            echo $e;
-        }
+        $this->diagnosticModel->show($id);
     }
 }
