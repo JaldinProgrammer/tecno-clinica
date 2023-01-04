@@ -33,8 +33,8 @@ class DateController extends Controller
     public function show($id){ //patient
         try {
             $dates = $this->dateModel->getByPatient($id);
-            dd($dates);
-            return view('date.index', compact('dates'));
+//            dd($dates);
+            return view('dates.index', compact('dates'));
         } catch (\Exception $e) {
             return view('error', compact('e'));
         }

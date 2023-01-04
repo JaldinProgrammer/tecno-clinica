@@ -66,7 +66,8 @@ class Date extends Model
     public function getByPatient($id){
         return DB::table('dates')
             ->join('reservations', 'dates.reservation_id', '=', 'reservations.id')
-            ->join('user', 'reservations.user_id', '=', $id)
+            ->join('users', 'reservations.user_id', '=', 'users.id')
+            ->where('reservations.user_id',$id)
             ->get();
     }
 

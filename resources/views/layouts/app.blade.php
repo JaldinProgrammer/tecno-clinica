@@ -62,6 +62,11 @@
                             </li>
                         @endcan
                         @canany(['admin','doctor'])
+                            <form class="form-inline my-2 my-lg-0">
+                                @csrf
+                                <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
                             </li>
@@ -71,22 +76,20 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('reservation.index') }}">Lista de reservaciones</a>
                             </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
+                            </li>
                         @endcanany
-                            <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>

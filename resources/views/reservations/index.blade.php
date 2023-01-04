@@ -10,7 +10,9 @@
         </div>
     @endif
     <div class="p-5" >
-        <a href="{{route('reservation.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">Crear reservacion</button></a>
+        @can('patient')
+            <a href="{{route('reservation.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">Crear reservacion</button></a>
+        @endcan
         <table class="table table-striped" id="table">
             <thead>
             <th>id</th>
