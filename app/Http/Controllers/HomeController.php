@@ -30,4 +30,8 @@ class HomeController extends Controller
         return view('unauthorized');
     }
 
+    public function report1(){
+        return view('reports.1');
+    }
+
 }

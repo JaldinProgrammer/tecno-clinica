@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DateController;
 use App\Http\Controllers\DiagnosticController;
+use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
@@ -26,6 +27,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/unauthorized', [App\Http\Controllers\HomeController::class, 'unauthorized'])->name('unauthorized');
+Route::get('/report/1', [App\Http\Controllers\HomeController::class, 'report1'])->name('report1');
+
 Route::post('/search', [TableController::class, 'search'])->name('search')->middleware(['admin', 'doctor']);
 
 
@@ -56,3 +59,10 @@ Route::prefix('date')->group(function () {
 //    Route::get('delete/{id}', [ReservationController::class, 'delete'])->name('date.delete');
 });
 
+Route::prefix('disease')->group(function () {
+    Route::get('index', [DiseaseController::class, 'index'])->name('date.index');
+//    Route::get('create/{id}', [DateController::class, 'create'])->name('date.create');
+//    Route::get('show/{id}', [DateController::class, 'show'])->name('date.show');
+//    Route::post('store', [DateController::class, 'store'])->name('date.store');
+//    Route::get('delete/{id}', [ReservationController::class, 'delete'])->name('date.delete');
+});

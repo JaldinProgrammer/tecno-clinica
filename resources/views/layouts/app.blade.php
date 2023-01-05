@@ -142,7 +142,9 @@
         @yield('content')
     </main>
 </div>
+
 <script src="../js/main.js"></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>--}}
 <script>
 
     /*==================== DARK LIGHT THEME ====================*/
@@ -187,5 +189,6 @@
     })
 
 </script>
+@yield('script')
 </body>
 </html>
