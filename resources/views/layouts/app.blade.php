@@ -25,9 +25,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 <div id="app">
 <header class="header" id="header">
     <nav class=" nav container ">
@@ -77,13 +77,31 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Logout
+                                    Cerrar sesión
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                             </div>
+                        </li>
+
+                        <li class="nav__item">
+                            <p class="nav__link">Colores <i class="bx bx-chevron-down nav__arrow"></i></p>
+                            <ul class="children color-switcher">
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="360"> Rojo </p>
+                                </li>
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="236"> Azul</p>
+                                </li>
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="142"> Verde</p>
+                                </li>
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="340"> Rosa</p>
+                                </li>
+                            </ul>
                         </li>
                     @endguest
 
@@ -102,7 +120,7 @@
     </nav>
     </header>
 
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
 </div>

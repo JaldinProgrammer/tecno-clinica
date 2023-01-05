@@ -1,11 +1,43 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8"; /*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 :root {
+
+
+  --header-height: 3.5rem;
+  --hue-color: 27;
+  --first-color: hsl(var(--hue-color), 72%, 48%);
+  --first-color-alt: hsl(var(--hue-color), 72%, 44%);
+  --first-color-second: hsl(var(--hue-color), 72%, 90%);
+  --black-color: hsl(var(--hue-color), 12%, 12%);
+  --card-color: hsl(0, 0%, 90%);
+  --title-color: hsl(206, 12%, 12%);
+  --text-color: hsl(206, 4%, 42%);
+  --text-color-light: hsl(206, 4%, 75%);
+  --body-color: hsl(206, 4%, 97%);
+  --container-color: #fff;
+
+  --body-font: 'Lato', sans-serif !important;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  --font-bold: 700;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+ /*  --hue-color: 27;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -49,8 +81,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 248, 250, 252;
-  --bs-font-sans-serif: "Nunito", sans-serif;
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --body-font: 'Lato', sans-serif !important;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 0.9rem;
@@ -71,7 +102,7 @@
   --bs-link-color: #0d6efd;
   --bs-link-hover-color: #0a58ca;
   --bs-code-color: #d63384;
-  --bs-highlight-bg: #fff3cd;
+  --bs-highlight-bg: #fff3cd; */
 }
 
 *,
@@ -90,7 +121,7 @@
     color: red;
     background: var(--bs-info) !important;
 }
-body {
+/* body {
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -101,7 +132,7 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+} */
 
 hr {
   margin: 1rem 0;
@@ -245,7 +276,7 @@ sup {
 
 a {
   color: var(--bs-link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: var(--bs-link-hover-color);
@@ -1741,7 +1772,7 @@ progress {
   --bs-table-bg: transparent;
   --bs-table-border-color: var(--bs-border-color);
   --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: var(--bs-body-color);
+ /*  --bs-table-striped-color: var(--bs-body-color); */
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
   --bs-table-active-color: var(--bs-body-color);
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
@@ -1793,13 +1824,13 @@ progress {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) > * {
-  --bs-table-accent-bg: var(--bs-table-striped-bg);
-  color: var(--bs-table-striped-color);
+  --bs-table-accent-bg:  var(--first-color-second);
+  color: var(--first-color-alt);
 }
 
 .table-striped-columns > :not(caption) > tr > :nth-child(even) {
-  --bs-table-accent-bg: var(--bs-table-striped-bg);
-  color: var(--bs-table-striped-color);
+  --bs-table-accent-bg:  var(--first-color-second);
+  color: var(--first-color-alt);
 }
 
 .table-active {
@@ -4162,7 +4193,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #fff;
+  /* --bs-card-bg: #fff; */
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -5311,7 +5342,7 @@ textarea.form-control-lg {
   width: 100%;
   color: var(--bs-modal-color);
   pointer-events: auto;
-  background-color: var(--bs-modal-bg);
+ /*  background-color: var(--bs-modal-bg); */
   background-clip: padding-box;
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
   border-radius: var(--bs-modal-border-radius);
@@ -5328,7 +5359,7 @@ textarea.form-control-lg {
   z-index: var(--bs-backdrop-zindex);
   width: 100vw;
   height: 100vh;
-  background-color: var(--bs-backdrop-bg);
+ /*  background-color: var(--bs-backdrop-bg); */
 }
 .modal-backdrop.fade {
   opacity: 0;
@@ -5370,7 +5401,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: flex-end;
   padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
-  background-color: var(--bs-modal-footer-bg);
+ /*  background-color: var(--bs-modal-footer-bg); */
   border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
   border-bottom-right-radius: var(--bs-modal-inner-border-radius);
   border-bottom-left-radius: var(--bs-modal-inner-border-radius);
@@ -5622,7 +5653,7 @@ textarea.form-control-lg {
   padding: var(--bs-tooltip-padding-y) var(--bs-tooltip-padding-x);
   color: var(--bs-tooltip-color);
   text-align: center;
-  background-color: var(--bs-tooltip-bg);
+  -color: var(--bs-tooltip-bg);
   border-radius: var(--bs-tooltip-border-radius);
 }
 
@@ -5666,7 +5697,7 @@ textarea.form-control-lg {
   line-break: auto;
   font-size: var(--bs-popover-font-size);
   word-wrap: break-word;
-  background-color: var(--bs-popover-bg);
+  /* background-color: var(--bs-popover-bg); */
   background-clip: padding-box;
   border: var(--bs-popover-border-width) solid var(--bs-popover-border-color);
   border-radius: var(--bs-popover-border-radius);
@@ -5768,7 +5799,7 @@ textarea.form-control-lg {
   margin-bottom: 0;
   font-size: var(--bs-popover-header-font-size);
   color: var(--bs-popover-header-color);
-  background-color: var(--bs-popover-header-bg);
+/*   background-color: var(--bs-popover-header-bg); */
   border-bottom: var(--bs-popover-border-width) solid var(--bs-popover-border-color);
   border-top-left-radius: var(--bs-popover-inner-border-radius);
   border-top-right-radius: var(--bs-popover-inner-border-radius);
@@ -5948,7 +5979,7 @@ textarea.form-control-lg {
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #fff;
+  /* background-color: #fff; */
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
@@ -6034,7 +6065,7 @@ textarea.form-control-lg {
   --bs-spinner-vertical-align: -0.125em;
   --bs-spinner-animation-speed: 0.75s;
   --bs-spinner-animation-name: spinner-grow;
-  background-color: currentcolor;
+  /* background-color: currentcolor; */
   opacity: 0;
 }
 
@@ -6072,7 +6103,7 @@ textarea.form-control-lg {
     max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
-    background-color: var(--bs-offcanvas-bg);
+    /* background-color: var(--bs-offcanvas-bg); */
     background-clip: padding-box;
     outline: 0;
     transition: transform 0.3s ease-in-out;
@@ -6136,7 +6167,7 @@ textarea.form-control-lg {
   .offcanvas-sm {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
   .offcanvas-sm .offcanvas-header {
     display: none;
@@ -6146,7 +6177,7 @@ textarea.form-control-lg {
     flex-grow: 0;
     padding: 0;
     overflow-y: visible;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
 }
 
@@ -6160,7 +6191,7 @@ textarea.form-control-lg {
     max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
-    background-color: var(--bs-offcanvas-bg);
+    /* background-color: var(--bs-offcanvas-bg); */
     background-clip: padding-box;
     outline: 0;
     transition: transform 0.3s ease-in-out;
@@ -6224,7 +6255,7 @@ textarea.form-control-lg {
   .offcanvas-md {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
   .offcanvas-md .offcanvas-header {
     display: none;
@@ -6234,7 +6265,7 @@ textarea.form-control-lg {
     flex-grow: 0;
     padding: 0;
     overflow-y: visible;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
 }
 
@@ -6248,7 +6279,7 @@ textarea.form-control-lg {
     max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
-    background-color: var(--bs-offcanvas-bg);
+    /* background-color: var(--bs-offcanvas-bg); */
     background-clip: padding-box;
     outline: 0;
     transition: transform 0.3s ease-in-out;
@@ -6312,7 +6343,7 @@ textarea.form-control-lg {
   .offcanvas-lg {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
   .offcanvas-lg .offcanvas-header {
     display: none;
@@ -6322,7 +6353,7 @@ textarea.form-control-lg {
     flex-grow: 0;
     padding: 0;
     overflow-y: visible;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
 }
 
@@ -6336,7 +6367,7 @@ textarea.form-control-lg {
     max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
-    background-color: var(--bs-offcanvas-bg);
+    /* background-color: var(--bs-offcanvas-bg); */
     background-clip: padding-box;
     outline: 0;
     transition: transform 0.3s ease-in-out;
@@ -6400,7 +6431,7 @@ textarea.form-control-lg {
   .offcanvas-xl {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
   .offcanvas-xl .offcanvas-header {
     display: none;
@@ -6410,7 +6441,7 @@ textarea.form-control-lg {
     flex-grow: 0;
     padding: 0;
     overflow-y: visible;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
 }
 
@@ -6424,7 +6455,7 @@ textarea.form-control-lg {
     max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
-    background-color: var(--bs-offcanvas-bg);
+   /*  background-color: var(--bs-offcanvas-bg); */
     background-clip: padding-box;
     outline: 0;
     transition: transform 0.3s ease-in-out;
@@ -6488,7 +6519,7 @@ textarea.form-control-lg {
   .offcanvas-xxl {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
   .offcanvas-xxl .offcanvas-header {
     display: none;
@@ -6498,7 +6529,7 @@ textarea.form-control-lg {
     flex-grow: 0;
     padding: 0;
     overflow-y: visible;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
 }
 
@@ -6604,7 +6635,7 @@ textarea.form-control-lg {
   min-height: 1em;
   vertical-align: middle;
   cursor: wait;
-  background-color: currentcolor;
+  /* background-color: currentcolor; */
   opacity: 0.5;
 }
 .placeholder.btn::before {
@@ -6918,7 +6949,7 @@ textarea.form-control-lg {
   align-self: stretch;
   width: 1px;
   min-height: 1em;
-  background-color: currentcolor;
+ /*  background-color: currentcolor; */
   opacity: 0.25;
 }
 
