@@ -76,26 +76,27 @@
                                 <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
                                 <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                             </form>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('diagnostic.index') }}">Diagnostico</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('reservation.index') }}">Lista de reservaciones</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Reportes
+{{--                            <li class="nav__item">--}}
+{{--                                <a class="nav__link" href="{{ route('user.index') }}">Usuarios</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav__item">--}}
+{{--                                <a class="nav__link" href="{{ route('diagnostic.index') }}">Diagnostico</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav__item">--}}
+{{--                                <a class="nav__link" href="{{ route('reservation.index') }}">Lista de reservaciones</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav__item">--}}
+{{--                                <a class="nav__link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>--}}
+{{--                            </li>--}}
+                            <li class="nav__item dropdown">
+                                <a id="navbarDropdown" class="nav__link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Panel de administracion
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Reporte 1</a>
-                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Reporte 2</a>
-                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Reporte 3</a>
+                                    <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
+                                    <a class="nav-link" href="{{ route('diagnostic.index') }}">Diagnostico</a>
+                                    <a class="nav-link" href="{{ route('reservation.index') }}">Lista de reservaciones</a>
+                                    <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
                                 </div>
                             </li>
                         @endcanany
