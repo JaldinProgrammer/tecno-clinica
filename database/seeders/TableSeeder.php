@@ -18,22 +18,27 @@ class TableSeeder extends Seeder
             [
                 'table' => 'Ver Reservaciones',
                 'route' => 'reservation.index',
+                'usingId' => false,
             ],
             [
                 'table' => 'Ver Diagnosticos',
                 'route' => 'diagnostic.index',
+                'usingId' => false,
             ],
             [
                 'table' => 'Ver Citas',
                 'route' => 'date.index',
+                'usingId' => true,
             ],
             [
                 'table' => 'Ver Usuarios',
                 'route' => 'user.index',
+                'usingId' => false,
             ],
             [
                 'table' => 'Ver Especialidades',
                 'route' => 'speciality.index',
+                'usingId' => false,
             ],
         ]);
     }

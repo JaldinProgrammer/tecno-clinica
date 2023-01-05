@@ -16,28 +16,24 @@
         <table class="table table-striped" id="table">
             <thead>
             <th>id</th>
-            <th>Descripcion</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Servicios</th>
+            <th>Coincidencia</th>
+            <th>Vista</th>
+            <th>Link</th>
             </thead>
             <tbody>
-            @foreach ($reservations as $item)
+            @foreach ($results as $item)
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td>{{$item->description}}</td>
-                    <td>{{$item->date}}</td>
-                    <td>{{$item->time}}</td>
-                    @can('patient')
-                        <td>
-                            <a href="{{ route('reservation.delete', $item->id) }}"><button type="button" class="btn btn-danger">Dar de baja</button></a>
-                        </td>
-                    @endcan
-                    @canany(['admin', 'doctor'])
-                        <td>
-                            <a href="{{ route('date.create', $item->id) }}"><button type="button" class="btn btn-success">Aceptar la reservacion</button></a>
-                        </td>
-                    @endcanany
+                    <td>{{$item->key}}</td>
+                    <td>{{$item->table}}</td>
+                    <td>
+{{--                        go for true in case that we require ID to render view--}}
+                        @if($item->usingId == 1)
+                            <a href="{{ route($item->route, Auth::user()->id) }}"><button type="button" class="btn btn-danger">Ir a pagina</button></a>
+                        @else
+                            <a href="{{ route($item->route) }}"><button type="button" class="btn btn-danger">Ir a pagina</button></a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
             </tbody>

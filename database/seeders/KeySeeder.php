@@ -51,7 +51,43 @@ class KeySeeder extends Seeder
                 'key' => 'checkeo',
                 'table_id' => 2,
             ],
-
+            [
+                'key' => 'cita',
+                'table_id' => 3,
+            ],
+            [
+                'key' => 'Cita',
+                'table_id' => 3,
+            ],
+            [
+                'key' => 'date',
+                'table_id' => 3,
+            ],
+            [
+                'key' => 'reservacion',
+                'table_id' => 3,
+            ],
+            [
+                'key' => 'programacion',
+                'table_id' => 3,
+            ],
+            [
+                'key' => 'encuentro',
+                'table_id' => 3,
+            ],
+            [
+                'key' => 'perfiles',
+                'table_id' => 4,
+            ],
+            [
+                'key' => 'cuentas',
+                'table_id' => 4,
+            ],
+            [
+                'key' => 'usuarios',
+                'table_id' => 4,
+            ],
+            //falta poner los demas indexes
         ]);
     }
 }

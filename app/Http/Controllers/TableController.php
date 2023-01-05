@@ -13,7 +13,8 @@ class TableController extends Controller
         $this->tableModel = $entityTable;
     }
     public function search(Request $request){
-        dd($this->tableModel->search($request));
-        return view('tables.search');
+        $results = $this->tableModel->search($request);
+//        dd($results);
+        return view('tables.search', compact('results'));
     }
 }
