@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Disease extends Model
 {
@@ -12,6 +13,7 @@ class Disease extends Model
 
     protected $fillable = [
         'name',
+        
     ];
     protected $dates = ['created_at', 'updated_at'];
 
@@ -24,4 +26,24 @@ class Disease extends Model
         return Disease::where('status',1)->get();
     }
  //comment 1
+    public function getdiseasebyid($id){
+        return Disease::findOrFail($id);
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        Disease::create([
+            'name' => $request['name'],
+        ]);
+    }
+
+    public function deleteDisease($id) {
+        $disease = Disease::findOrFail($id);
+        $disease->status = 0;
+        $disease->update();
+        return $disease;
+    }
 }

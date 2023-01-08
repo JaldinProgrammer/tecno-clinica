@@ -24,4 +24,42 @@ class DoctorSpeciality extends Model
     {
         return  $this->belongsTo(Speciality::class);
     }
+
+    public function store(Request $request){
+        $request->validate([
+            'speciality_id' => ['required'],
+            'user_id' => ['required'],
+        ]);
+
+        DoctorSpeciality::create([
+            'speciality_id' => $request['key'],
+            'user_id' => $request['table_id']
+        ]);
+    }
+
+    // public function setTables($id, $key){
+    //     $key = Key::findOrFail($key);
+    //     $key->table_id = $id;
+    //     $key->update();
+    // }
+    
+    public function getAll(){
+        return DoctorSpeciality::where('status',1)->get();
+    }
+
+    public function index(){
+        return DoctorSpeciality::all();
+    }
+
+    public function show($id){
+        return DoctorSpeciality::where('user_id', $id)->get();
+    }
+
+    public function deleteDoctorSpeciality($id) {
+        $doctorspeciality = DoctorSpeciality::findOrFail($id);
+        $doctorspeciality->status = 0;
+        $doctorspeciality->update();
+        return $doctorspeciality;
+    }
+
 }

@@ -22,6 +22,10 @@ class Table extends Model
         return  $this->hasMany(Key::class);
     }
 
+    public function getAll(){
+        return Table::where('status',1)->get();
+    }
+
     public function search(Request $request){
         //$request['date']
 

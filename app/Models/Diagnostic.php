@@ -49,12 +49,13 @@ class Diagnostic extends Model
             'user_id'=> Auth::user()->id
         ]);
     }
+    //.
 
     public function index(){
         return Diagnostic::all();
     }
 
     public function show($id){
-        return Diagnostic::where('user_id', $id)->get();
+        return Diagnostic::where('table_id', $id)->get();
     }
 }

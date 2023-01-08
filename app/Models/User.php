@@ -85,4 +85,8 @@ class User extends Authenticatable
     public function getById($id){
         return User::findOrFail($id);
     }
+
+    public function getAllDoctors(){
+        return User::where('is_doctor',1)->get();
+    }
 }
