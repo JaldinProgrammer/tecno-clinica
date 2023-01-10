@@ -26,7 +26,7 @@
                     <td>{{$item->cellphone}}</td>
                     <td>{{$item->ci}}</td>
                     <td>
-                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
+                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class=" btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
                     </td>
                 </tr>
             @endforeach

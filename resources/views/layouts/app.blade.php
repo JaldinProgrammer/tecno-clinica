@@ -25,7 +25,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body class="d-flex flex-column min-vh-100">
 <div id="app">
@@ -47,7 +46,7 @@
 
                 <!-- Right Side Of Navbar -->
                 <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
+                <ul class="nav__list nav__list-li">
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
@@ -71,10 +70,19 @@
                             </li>
                         @endcan
                         @canany(['admin','doctor'])
-                            <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
+
+
+                        <li class="nav__item">
+                            <p class="nav__link">Buscar <i class="bx bx-chevron-down nav__arrow"></i></p>
+                            <ul class="children color-switcher">
+                                <li class="sub__child">
+                                <form class="" method="POST" action="{{ route('search') }}">
                                 @csrf
-                                <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
-                                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                                <div class="contact__form-div">
+                                    <label for="" class="contact__form-tag2">Buscador</label>
+                                    <input class="contact__form-input" name="search" type="search" placeholder="Buscador" aria-label="Search">
+                                    <button class="button button_icon" type="submit"><i class='bx bx-search-alt-2 change-theme'></i></button>
+                                </div>
                             </form>
 {{--                            <li class="nav__item">--}}
 {{--                                <a class="nav__link" href="{{ route('user.index') }}">Usuarios</a>--}}
@@ -88,9 +96,13 @@
 {{--                            <li class="nav__item">--}}
 {{--                                <a class="nav__link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>--}}
 {{--                            </li>--}}
+                                </li>
+                            </ul>
+                        </li>
+                            
                             <li class="nav__item dropdown">
-                                <a id="navbarDropdown" class="nav__link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Panel de administracion
+                                <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Panel de administracion <i class="bx bx-chevron-down nav__arrow"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
@@ -107,8 +119,8 @@
                             <a class="nav__link" href="{{ route('diagnostic.index') }}">Diagnostico</a>
                         </li>
                         <li class="nav__item dropdown">
-                            <a id="navbarDropdown" class="nav__link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                            <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <i class="bx bx-chevron-down nav__arrow"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -120,6 +132,24 @@
                                     @csrf
                                 </form>
                             </div>
+                        </li>
+
+                        <li class="nav__item">
+                            <p class="nav__link">Colores <i class="bx bx-chevron-down nav__arrow"></i></p>
+                            <ul class="children color-switcher">
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="360"> Rojo </p>
+                                </li>
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="236"> Azul</p>
+                                </li>
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="142"> Verde</p>
+                                </li>
+                                <li class="sub__child">
+                                    <p class="nav2__link theme-button2" data-color="340"> Rosa</p>
+                                </li>
+                            </ul>
                         </li>
                     @endguest
 
@@ -139,56 +169,15 @@
     </header>
 
     <main class="py-4">
-        @yield('content')
+        <div class="section">
+            @yield('content')
+        </div>
     </main>
 </div>
 
 <script src="../js/main.js"></script>
+<script src="../js/app.js"></script>
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>--}}
-<script>
-
-    /*==================== DARK LIGHT THEME ====================*/
-    const themeButton = document.getElementById('theme-button')
-    const darkTheme = 'dark-theme'
-    const iconTheme = 'uil-sun'
-    console.log(themeButton)
-    // Previously selected topic (if user selected)
-    const selectedTheme = localStorage.getItem('selected-theme')
-    const selectedIcon = localStorage.getItem('selected-icon')
-
-    // We obtain the current theme that the interface has by validating the dark-theme class
-    const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-    const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
-
-    // We validate if the user previously chose a topic
-    if (selectedTheme) {
-        // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-        document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-        themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
-    }
-
-    // Activate / deactivate the theme manually with the button
-    themeButton.addEventListener('click', () => {
-        // Add or remove the dark / icon theme
-        document.body.classList.toggle(darkTheme)
-        themeButton.classList.toggle(iconTheme)
-        // We save the theme and the current icon that the user chose
-        localStorage.setItem('selected-theme', getCurrentTheme())
-        localStorage.setItem('selected-icon', getCurrentIcon())
-    })
-
-
-    /*==================== DARK LIGHT THEME ====================*/
-    let themeButtons = document.querySelectorAll('.theme-button2');
-
-    themeButtons.forEach(color =>{
-        color.addEventListener('click', () =>{
-            let dataColor = color.getAttribute('data-color');
-            document.querySelector(':root').style.setProperty('--hue-color', dataColor);
-        })
-    })
-
-</script>
 @yield('script')
 </body>
 </html>
