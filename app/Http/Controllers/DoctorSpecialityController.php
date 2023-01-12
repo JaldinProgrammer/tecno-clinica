@@ -20,11 +20,14 @@ class DoctorSpecialityController extends Controller
         $this->specialityModel =  $entitySpeciality;
     }
 
-    public function create(){
-        
-        $users = $this->userModel->getAllDoctors();
+    public function create($id){
+        $user = $this->userModel->getById($id);
         $specialities = $this->specialityModel->getAll();
-        return view('doctorSpecialities.create', compact('users'), compact('specialities'));
+        return view('doctorSpecialities.create', compact('user'), compact('specialities'));
+
+        // $users = $this->userModel->getAllDoctors();
+        // $specialities = $this->specialityModel->getAll();
+        // return view('doctorSpecialities.create', compact('users'), compact('specialities'));
     }
 
    
@@ -37,11 +40,15 @@ class DoctorSpecialityController extends Controller
     }
 
     public function index(){
-        $doctorSpecialities = $this->doctorSpecialityModel->index();
+        $doctorSpecialities = $this->doctorSpecialityModel->getAll();
         return view('doctorSpecialities.index', compact('doctorSpecialities'));
     }
 
     public function show($id){
         $this->doctorSpecialityModel->show($id);
+    }
+    public function delete($id){
+        $diseaseId = $this->doctorSpecialityModel->deletedoctorSpeciality($id);
+        return redirect()->route('doctorSpeciality.index');
     }
 }

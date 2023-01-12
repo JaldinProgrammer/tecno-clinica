@@ -46,7 +46,10 @@ class Key extends Model
     // }
     
     public function getAll(){
-        return Key::where('status',1)->get();
+        
+        $data = Key::where('status',1)->get();
+        $data->load('table');
+        return $data;
     }
 
     public function index(){

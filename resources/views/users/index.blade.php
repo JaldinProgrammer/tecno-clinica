@@ -28,6 +28,12 @@
                     <td>
                         <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
                     </td>
+                    <td>
+                    @if($item->is_doctor==1)
+                    <td>
+                        <a href="{{ route('doctorSpeciality.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">guardar nueva especialidad</button></a>
+                    </td>
+                    @endif
                 </tr>
             @endforeach
             </tbody>

@@ -22,12 +22,12 @@
             <tbody>
             @foreach ($keys as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
+                    <!-- <td>{{$item->id}}</td> -->
                     <td>{{$item->key}}</td>
-                    <td>{{$item->table_id}}</td>
+                    <td>{{$item->table->table}}</td>
                     @can('admin')
                         <td>
-                            <a href="{{ route('disease.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar llave</button></a>
+                            <a href="{{ route('key.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar llave</button></a>
                         </td>
                     @endcan
                    

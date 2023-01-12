@@ -15,20 +15,20 @@
         @endcan
         <table class="table table-striped" id="table">
             <thead>
-            <th>id</th>
-            <th>especialidad id</th>
-            <th>doctor id</th>
-            <th>estado</th>
+          
+            <th>especialidad </th>
+            <th>doctor </th>
+            
             </thead>
             <tbody>
             @foreach ($doctorSpecialities as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
-                    <td>{{$item->speciality_id}}</td>
-                    <td>{{$item->user_id}}</td>
+                    
+                    <td>{{$item->speciality->name}}</td>
+                    <td>{{$item->user->name}}</td>
                     @can('admin')
                         <td>
-                            <a href="{{ route('doctorspeciality.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar especialidad</button></a>
+                            <a href="{{ route('doctorSpeciality.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar especialidad</button></a>
                         </td>
                     @endcan
                    

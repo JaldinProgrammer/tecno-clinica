@@ -36,11 +36,16 @@ class KeyController extends Controller
     }
 
     public function index(){
-        $keys = $this->keyModel->index();
+        $keys = $this->keyModel->getAll();
         return view('keysv.index', compact('keys'));
     }
 
     public function show($id){
         $this->keyModel->show($id);
+    }
+
+    public function delete($id){
+        $keyId = $this->keyModel->deleteKey($id);
+        return redirect()->route('key.index');
     }
 }

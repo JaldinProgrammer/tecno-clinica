@@ -15,27 +15,27 @@
         @endcan
         <table class="table table-striped" id="table">
             <thead>
-            <th>id</th>
+            <!-- <th>id</th> -->
             <th>title</th>
             <th>description</th>
             <th>from</th>
             <th>to</th>
-            <th>status</th>
+            <!-- <th>status</th> -->
             </thead>
             <tbody>
             @foreach ($promotions as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
+                    <!-- <td>{{$item->id}}</td> -->
                     <td>{{$item->title}}</td>
                     <td>{{$item->description}}</td>
                     <td>{{$item->from}}</td>
                     <td>{{$item->to}}</td>
-                    <td>{{$item->status}}</td>
+                    <!-- <td>{{$item->status}}</td> -->
 
-                    <td>{{$item->status}}</td>
+                    <!-- <td>{{$item->status}}</td> -->
                     @can('admin')
                         <td>
-                            <a href="{{ route('promotion.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar enfermedad</button></a>
+                            <a href="{{ route('promotion.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar promocion</button></a>
                         </td>
                     @endcan
                    

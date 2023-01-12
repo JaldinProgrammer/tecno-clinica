@@ -40,6 +40,6 @@ class DiseaseController extends Controller
 
     public function delete($id){
         $diseaseId = $this->diseaseModel->deleteDisease($id);
-        return redirect()->route('disease.show');
+        return redirect()->route('disease.index');
     }
 }

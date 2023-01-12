@@ -15,7 +15,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Registro de promociones</div>
-                    @dump($errors->all())
+                    
                     <div class="card-body">
                         <form method="POST" action="{{ route('promotion.store') }}">
                             @csrf

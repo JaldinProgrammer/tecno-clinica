@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class DoctorSpeciality extends Model
 {
@@ -32,8 +33,8 @@ class DoctorSpeciality extends Model
         ]);
 
         DoctorSpeciality::create([
-            'speciality_id' => $request['key'],
-            'user_id' => $request['table_id']
+            'speciality_id' => $request['speciality_id'],
+            'user_id' => $request['user_id']
         ]);
     }
 
@@ -44,7 +45,9 @@ class DoctorSpeciality extends Model
     // }
     
     public function getAll(){
-        return DoctorSpeciality::where('status',1)->get();
+        $data = DoctorSpeciality::where('status',1)->get();
+        $data->load('speciality');
+        return $data;
     }
 
     public function index(){

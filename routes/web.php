@@ -92,11 +92,13 @@ Route::prefix('key')->group(function () {
     Route::get('create', [KeyController::class, 'create'])->name('key.create')->middleware(['admin', 'doctor']);
     Route::get('index', [KeyController::class, 'index'])->name('key.index')->middleware(['admin', 'doctor']);
     Route::post('store/{table?}', [KeyController::class, 'store'])->name('key.store')->middleware(['admin', 'doctor']);
+    Route::get('delete/{id}', [KeyController::class, 'delete'])->name('key.delete');
 });
 
 Route::prefix('doctorSpeciality')->group(function () {
-    Route::get('create', [DoctorSpecialityController::class, 'create'])->name('doctorSpeciality.create')->middleware(['admin']);
+    Route::get('create/{id}', [DoctorSpecialityController::class, 'create'])->name('doctorSpeciality.create')->middleware(['admin']);
     Route::get('index', [DoctorSpecialityController::class, 'index'])->name('doctorSpeciality.index')->middleware(['admin']);
     Route::post('store', [DoctorSpecialityController::class, 'store'])->name('doctorSpeciality.store')->middleware(['admin']); //{users?,speciality?}
+    Route::get('delete/{id}', [DoctorSpecialityController::class, 'delete'])->name('doctorSpeciality.delete');
 });
 

@@ -39,6 +39,6 @@ class SpecialityController extends Controller
 
     public function delete($id){
         $specialitiesId = $this->specialityModel->deleteSpeciality($id);
-        return redirect()->route('speciality.show');
+        return redirect()->route('speciality.index');
     }
 }
