@@ -34,16 +34,6 @@
             <img src="../../images/logoo.png" alt="" class="nav__logo-img">
                 CEMM
             </a>
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-
-            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-                <!-- Left Side Of Navbar -->
-                <!-- <ul class="navbar-nav me-auto">
-
-                </ul> -->
-
                 <!-- Right Side Of Navbar -->
                 <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list nav__list-li">
@@ -84,22 +74,10 @@
                                     <button class="button button_icon" type="submit"><i class='bx bx-search-alt-2 change-theme'></i></button>
                                 </div>
                             </form>
-{{--                            <li class="nav__item">--}}
-{{--                                <a class="nav__link" href="{{ route('user.index') }}">Usuarios</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav__item">--}}
-{{--                                <a class="nav__link" href="{{ route('diagnostic.index') }}">Diagnostico</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav__item">--}}
-{{--                                <a class="nav__link" href="{{ route('reservation.index') }}">Lista de reservaciones</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav__item">--}}
-{{--                                <a class="nav__link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>--}}
-{{--                            </li>--}}
                                 </li>
                             </ul>
                         </li>
-                            
+
                             <li class="nav__item dropdown">
                                 <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Panel de administracion <i class="bx bx-chevron-down nav__arrow"></i>
@@ -158,13 +136,12 @@
                     </div>
                 </ul>
             </div>
-            <div class="nav_btns">
-                    <i class="bx bx-moon change-theme" id="theme-button"></i>
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="bx bx-grid-alt"></i>
-                    </div>
-                </div>
+        <div class="nav_btns">
+            <i class="bx bx-moon change-theme" id="theme-button"></i>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="bx bx-grid-alt"></i>
             </div>
+        </div>
     </nav>
     </header>
 
@@ -175,6 +152,26 @@
     </main>
 </div>
 
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Vistas a la pagina: {{App\Models\Log::showViews()}} </span>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MendietaClinic</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
 <script src="../js/main.js"></script>
 <script src="../js/app.js"></script>
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>--}}
