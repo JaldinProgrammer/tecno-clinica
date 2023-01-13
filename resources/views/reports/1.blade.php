@@ -2,7 +2,7 @@
 
 @section('content')
     <h3>hola</h3>
-    <div>
+    <div class="container">
         <canvas id="myChart"></canvas>
     </div>
 @endsection
@@ -11,14 +11,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const ctx = document.getElementById('myChart');
-
+        var users =  {{ Js::from($data) }};
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Doctores', 'Administradores', 'Pacientes'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: '# de cuentas',
+                    data: users,
                     borderWidth: 1
                 }]
             },

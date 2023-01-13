@@ -89,4 +89,16 @@ class User extends Authenticatable
     public function getAllDoctors(){
         return User::where('is_doctor',1)->get();
     }
+
+    public function getUsersQuantity() {
+        $doctors = User::where('is_doctor',1)->count();
+        $admins = User::where('is_admin',1)->count();
+        $patients = User::where('is_doctor',0)->where('is_admin',0)->count();
+        return [$doctors, $admins, $patients];
+//        return array(
+//            "doctors" => $doctors,
+//            "admins" => $admins,
+//            "patients" => $patients,
+//        );
+    }
 }
