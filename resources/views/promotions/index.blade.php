@@ -10,30 +10,35 @@
         </div>
     @endif
     <div class="p-5" >
+        @can('admini')
+         <a href="{{route('promotion.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">registrar promocion</button></a>
+        @endcan
         <table class="table table-striped" id="table">
             <thead>
-            <th class="prueba">id</th>
-            <th class="prueba">Nombre</th>
-            <th>Celular</th>
-            <th>Identificacion</th>
-            <th>Servicios</th>
+            <!-- <th>id</th> -->
+            <th>title</th>
+            <th>description</th>
+            <th>from</th>
+            <th>to</th>
+            <!-- <th>status</th> -->
             </thead>
             <tbody>
-            @foreach ($users as $item)
+            @foreach ($promotions as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
-                    <td>{{$item->name}}</td>
-                    <td>{{$item->cellphone}}</td>
-                    <td>{{$item->ci}}</td>
-                    <td>
-                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class=" btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
-                    </td>
-                    <td>
-                    @if($item->is_doctor==1)
-                    <td>
-                        <a href="{{ route('doctorSpeciality.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">guardar nueva especialidad</button></a>
-                    </td>
-                    @endif
+                    <!-- <td>{{$item->id}}</td> -->
+                    <td>{{$item->title}}</td>
+                    <td>{{$item->description}}</td>
+                    <td>{{$item->from}}</td>
+                    <td>{{$item->to}}</td>
+                    <!-- <td>{{$item->status}}</td> -->
+
+                    <!-- <td>{{$item->status}}</td> -->
+                    @can('admin')
+                        <td>
+                            <a href="{{ route('promotion.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar promocion</button></a>
+                        </td>
+                    @endcan
+                   
                 </tr>
             @endforeach
             </tbody>

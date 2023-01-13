@@ -10,30 +10,28 @@
         </div>
     @endif
     <div class="p-5" >
+        @can('admini')
+         <a href="{{route('doctorSpeciality.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">guardar especialidad en doctor</button></a>
+        @endcan
         <table class="table table-striped" id="table">
             <thead>
-            <th class="prueba">id</th>
-            <th class="prueba">Nombre</th>
-            <th>Celular</th>
-            <th>Identificacion</th>
-            <th>Servicios</th>
+          
+            <th>especialidad </th>
+            <th>doctor </th>
+            
             </thead>
             <tbody>
-            @foreach ($users as $item)
+            @foreach ($doctorSpecialities as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
-                    <td>{{$item->name}}</td>
-                    <td>{{$item->cellphone}}</td>
-                    <td>{{$item->ci}}</td>
-                    <td>
-                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class=" btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
-                    </td>
-                    <td>
-                    @if($item->is_doctor==1)
-                    <td>
-                        <a href="{{ route('doctorSpeciality.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">guardar nueva especialidad</button></a>
-                    </td>
-                    @endif
+                    
+                    <td>{{$item->speciality->name}}</td>
+                    <td>{{$item->user->name}}</td>
+                    @can('admin')
+                        <td>
+                            <a href="{{ route('doctorSpeciality.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar especialidad</button></a>
+                        </td>
+                    @endcan
+                   
                 </tr>
             @endforeach
             </tbody>

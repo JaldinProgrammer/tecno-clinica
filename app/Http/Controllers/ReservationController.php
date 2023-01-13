@@ -7,7 +7,7 @@ use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+//. 
 class ReservationController extends Controller
 {
     private User $userModel;

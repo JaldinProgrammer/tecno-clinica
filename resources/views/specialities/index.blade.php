@@ -10,30 +10,27 @@
         </div>
     @endif
     <div class="p-5" >
+        @can('admini')
+         <a href="{{route('speciality.create')}}"><button type="button" class="btn btn-success btn-lg btn-block">registrar especialidad</button></a>
+        @endcan
         <table class="table table-striped" id="table">
             <thead>
-            <th class="prueba">id</th>
-            <th class="prueba">Nombre</th>
-            <th>Celular</th>
-            <th>Identificacion</th>
-            <th>Servicios</th>
+            <!-- <th>id</th> -->
+            <th>name</th>
+            <th>status</th>
             </thead>
             <tbody>
-            @foreach ($users as $item)
+            @foreach ($specialities as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
+                    <!-- <td>{{$item->id}}</td> -->
                     <td>{{$item->name}}</td>
-                    <td>{{$item->cellphone}}</td>
-                    <td>{{$item->ci}}</td>
-                    <td>
-                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class=" btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
-                    </td>
-                    <td>
-                    @if($item->is_doctor==1)
-                    <td>
-                        <a href="{{ route('doctorSpeciality.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">guardar nueva especialidad</button></a>
-                    </td>
-                    @endif
+                    <!-- <td>{{$item->status}}</td> -->
+                    @can('admin')
+                        <td>
+                            <a href="{{ route('speciality.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar enfermedad</button></a>
+                        </td>
+                    @endcan
+                   
                 </tr>
             @endforeach
             </tbody>
