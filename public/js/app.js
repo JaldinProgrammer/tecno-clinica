@@ -1272,3 +1272,41 @@ themeButtons.forEach(color =>{
         localStorage.setItem('current-color', dataColor);
     })
 })
+
+
+/*=============== EMAIL JS ===============*/
+
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+
+    if (contactUser.value === '') {
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Tienes que ingresar un correo'
+
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 3000);
+    }else{
+        emailjs.sendForm('service_2dhnn0e','template_x1525lr','#contact-form','bvHOl81qBq-9VSThN')
+            .then(() =>{
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'Tú correo se registro con exito!'
+
+                setTimeout(() => {
+                    contactMessage.textContent = ''
+                }, 3000);
+            }, (error) =>{
+                alert('OOPS! Tenemos algunas fallas...', error)
+            })
+
+        contactUser.value = ''
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)

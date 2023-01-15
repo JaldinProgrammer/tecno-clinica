@@ -227,6 +227,14 @@ button {
   cursor: pointer;
 }
 
+.color-red {
+  color: hsl(0, 80%, 64%);
+}
+
+.color-green {
+  color: var(--first-color-blue);
+}
+
 
 
 @media screen and (max-width:1200px){
@@ -720,6 +728,15 @@ button {
   padding: 4rem 0 2.5rem;
 }
 
+.footer__form{
+  display: flex;
+}
+
+.footer__form{
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .footer__title{
   color: #fff;
   font-size: var(--h1-font-size);
@@ -1081,6 +1098,10 @@ button {
     max-width: 400px;
     margin-right: 7rem;
     margin-left: auto;
+  }
+
+  .footer__form{
+    flex-direction: row;
   }
 
 

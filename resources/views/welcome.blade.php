@@ -135,29 +135,19 @@
                         <div class="specialty__group specialty__line">
                             <img src="../images/268.png" alt="" class="specialty__img">
 
-                            <h3 class="specialty__title">Café seleccionado</h3>
-                            <p class="specialty__Description">
-                                Nosotros seleccionamos los mejores cafés deel mundo
-                                me dieron ganas de un starbucks
-                            </p>
+                            <h3 class="specialty__title">Atención a Pacientes internos</h3>
                         </div>
 
                         <div class="specialty__group specialty__line">
                             <img src="../images/20.png" alt="" class="specialty__img">
 
-                            <h3 class="specialty__title">Deliciosas Galletas</h3>
-                            <p class="specialty__Description">
-                                No encontre imagenes de galletas bonitas pero te deje algunos Croissant
-                            </p>
+                            <h3 class="specialty__title">Servicios de emergencia</h3>
                         </div>
 
                         <div class="specialty__group specialty__line">
                             <img src="../images/12.png" alt="" class="specialty__img">
 
-                            <h3 class="specialty__title">Delivery hasta tu hogar</h3>
-                            <p class="specialty__Description">
-                                Tenemos el servicio de Delivery para que puedas disfrutarlo desde la comodidad de tu hogar.
-                            </p>
+                            <h3 class="specialty__title">Laboratorios e Instalaciones Técnicas</h3>
                         </div>
                     </div>
                 </div>
@@ -201,12 +191,14 @@
                             Subscribete para recibir más información
                         </p>
 
-                        <div class="footer__newsletter">
-                            <input type="email" placeholder="Dirección de email" class="footer__input">
-                            <button class="footer__button">
+                        <form action="" class="footer__form" id="contact-form">
+                            <input type="mail" name="mail" placeholder="Dirección de email" class="footer__input" id="contact-user">
+                            <button type="submit" class="footer__button">
                                 <i class="bx bx-right-arrow-alt"></i>
                             </button>
-                        </div>
+                        </form>
+
+                        <p class="footer__messsage" id="contact-message"></p>
                     </div>
 
                     <div class="footer__data">
@@ -252,6 +244,9 @@
 
         <script src="../js/main.js"></script>
         <script src="../js/app.js"></script>
+
+                <!--=============== EMAIL JS ===============-->
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         
     </body>
 </html>
