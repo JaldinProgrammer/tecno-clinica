@@ -89,13 +89,26 @@
                                     <a class="nav-link" href="{{ route('date.index', Auth::user()->id) }}">Citas</a>
                                 </div>
                             </li>
+
+                            <li class="nav__item dropdown">
+                                <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Reportes <i class="bx bx-chevron-down nav__arrow"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 1</a>
+                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 2</a>
+                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 3</a>
+                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 4</a>
+                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 5</a>
+                                </div>
+                            </li>
                         @endcanany
-                        <li class="nav__item">
-                            <a class="nav__link" href="{{ route('user.index') }}">Usuarios</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="{{ route('diagnostic.index') }}">Diagnostico</a>
-                        </li>
+{{--                        <li class="nav__item">--}}
+{{--                            <a class="nav__link" href="{{ route('user.index') }}">Usuarios</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav__item">--}}
+{{--                            <a class="nav__link" href="{{ route('diagnostic.index') }}">Diagnostico</a>--}}
+{{--                        </li>--}}
                         <li class="nav__item dropdown">
                             <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <i class="bx bx-chevron-down nav__arrow"></i>

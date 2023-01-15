@@ -44,6 +44,33 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('1234')
             ],
             [
+                'name' => 'Chapatin',
+                'email' => 'chapatin@gmail.com',
+                'ci' => '12314241',
+                'cellphone' => '34531231',
+                'is_admin' => false,
+                'is_doctor' => true,
+                'password' => Hash::make('1234')
+            ],
+            [
+                'name' => 'Fernando Crayola Mariaca',
+                'email' => 'crayolita@gmail.com',
+                'ci' => '32214241',
+                'cellphone' => '76431231',
+                'is_admin' => false,
+                'is_doctor' => true,
+                'password' => Hash::make('1234')
+            ],
+            [
+                'name' => 'Rodrigo Franchesco Virgolioni',
+                'email' => 'crayolita@gmail.com',
+                'ci' => '32214241',
+                'cellphone' => '76431231',
+                'is_admin' => false,
+                'is_doctor' => true,
+                'password' => Hash::make('1234')
+            ],
+            [
                 'name' => 'Felix Panduro',
                 'email' => 'felix@gmail.com',
                 'ci' => '98023241',
