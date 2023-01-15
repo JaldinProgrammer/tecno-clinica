@@ -33,7 +33,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/unauthorized', [App\Http\Controllers\HomeController::class, 'unauthorized'])->name('unauthorized');
 Route::get('/report/1', [App\Http\Controllers\HomeController::class, 'report1'])->name('report1');
-Route::get('/report/2', [App\Http\Controllers\HomeController::class, 'repors2'])->name('report2');
+Route::get('/report/2', [App\Http\Controllers\HomeController::class, 'report2'])->name('report2');
 
 Route::post('/search', [TableController::class, 'search'])->name('search')->middleware(['admin', 'doctor']);
 
