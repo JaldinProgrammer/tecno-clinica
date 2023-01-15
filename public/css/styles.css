@@ -826,7 +826,7 @@ button {
   position: fixed;
   right: 1rem;
   bottom: -30%;
-  background-color: #fff;
+  background-color: var(--first-color);
   box-shadow: 0 4px 12px hsla(206, 4%, 20%, .1);
   display: inline-flex;
   padding: .35rem;
@@ -1125,7 +1125,7 @@ button {
     margin: auto 0;
   }
   .specialty__img{
-    width: 80px;
+    width: 200px;
     margin-bottom: 1.5rem;
   }
 

@@ -20,7 +20,7 @@
                                         @foreach ($specialities as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
-                                    </select>
+                                    </select> 
                                      
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                             <input type="hidden" name="user_id" value="{{$user->id}}">                    
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="button">
                                         {{ __('Registrar') }}
                                     </button>
                                 </div>

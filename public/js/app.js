@@ -1234,9 +1234,10 @@ const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'uil-sun'
 
-// Previously selected topic (if user selected)
+
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
+const CurrentColor = localStorage.getItem('current-color')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
@@ -1251,21 +1252,21 @@ if (selectedTheme) {
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
 
-/*==================== DARK LIGHT THEME ====================*/
 let themeButtons = document.querySelectorAll('.theme-button2');
 
 themeButtons.forEach(color =>{
     color.addEventListener('click', () =>{
         let dataColor = color.getAttribute('data-color');
         document.querySelector(':root').style.setProperty('--hue-color', dataColor);
+        localStorage.setItem('current-color', dataColor)
+
+
     })
 })
