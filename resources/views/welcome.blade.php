@@ -105,14 +105,14 @@
                         <div class="home__data">
                             <div class="home__data-group">
                                 <h2 class="home__data-number">+1200</h2>
-                                <h3 class="home__data-title">Clientes</h3>
-                                <p class="home__data-description">Todos bien atendidos.</p>
+                                <h3 class="home__data-title">Atenciones</h3>
+                                <p class="home__data-description">En Consulta Externa.</p>
                             </div>
 
                             <div class="home__data-group">
-                                <h2 class="home__data-number">200</h2>
-                                <h3 class="home__data-title">Aliados</h3>
-                                <p class="home__data-description">vendiendo cafe asies.</p>
+                                <h2 class="home__data-number">326</h2>
+                                <h3 class="home__data-title">Hospitalizaciones</h3>
+                                <p class="home__data-description">Atendidas.</p>
                             </div>
                         </div>
 
@@ -127,323 +127,126 @@
                 <div class="specialty__container">
                     <div class="specialty__box">
                         <h2 class="section__title">
-                            Todo lo que nuestra cafeteria te ofrece para ti
+                            Todo lo que nuestra Clinica puede ofrecerte
                         </h2>
-
-                        <div>
-                            <a href="#contact" class="button specialty__button">Comprar</a>
-                        </div>
                     </div>
 
                     <div class="specialty__category">
                         <div class="specialty__group specialty__line">
-                            <img src="./assets/img/specialty1.png" alt="" class="specialty__img">
+                            <img src="../images/268.png" alt="" class="specialty__img">
 
-                            <h3 class="specialty__title">Café seleccionado</h3>
-                            <p class="specialty__Description">
-                                Nosotros seleccionamos los mejores cafés deel mundo
-                                me dieron ganas de un starbucks
-                            </p>
+                            <h3 class="specialty__title">Atención a Pacientes internos</h3>
                         </div>
 
                         <div class="specialty__group specialty__line">
-                            <img src="./assets/img/specialty2.png" alt="" class="specialty__img">
+                            <img src="../images/20.png" alt="" class="specialty__img">
 
-                            <h3 class="specialty__title">Deliciosas Galletas</h3>
-                            <p class="specialty__Description">
-                                No encontre imagenes de galletas bonitas pero te deje algunos Croissant
-                            </p>
+                            <h3 class="specialty__title">Servicios de emergencia</h3>
                         </div>
 
                         <div class="specialty__group specialty__line">
-                            <img src="./assets/img/specialty3.png" alt="" class="specialty__img">
+                            <img src="../images/12.png" alt="" class="specialty__img">
 
-                            <h3 class="specialty__title">Delivery hasta tu hogar</h3>
-                            <p class="specialty__Description">
-                                Tenemos el servicio de Delivery para que puedas disfrutarlo desde la comodidad de tu hogar.
-                            </p>
+                            <h3 class="specialty__title">Laboratorios e Instalaciones Técnicas</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-            <section class="products section" id="products">
-                <div class="products__container container">
-                    <h2 class="section__title">
-                        Escoge entre nuestros Productos
-                    </h2>
-
-                    <ul class="products__filters">
-                        <li class="products__item products__line active-product" data-filter=".delicacies">
-                            <h3 class="products__title">Nuevas Delicias</h3>
-                            <span class="products__stock">3 productos</span>
-                        </li>
-
-                        <li class="products__item products__line" data-filter=".coffee">
-                            <h3 class="products__title">Cafés</h3>
-                            <span class="products__stock">4 productos</span>
-                        </li>
-
-                        <li class="products__item " data-filter=".cake">
-                            <h3 class="products__title">Pasteles</h3>
-                            <span class="products__stock">4 productos</span>
-                        </li>
-                    </ul>
-
-                    <div class="products__content grid">
-                        <!-- =========== Delicacies =========== -->
-                        <article class="products__card delicacies">
-                            <div class="products__shape">
-                                <img src="./assets/img/delicacies1.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs5</h2>
-                                <h3 class="products__name">Galletas</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card delicacies">
-                            <div class="products__shape">
-                                <img src="./assets/img/delicacies2.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs6</h2>
-                                <h3 class="products__name">Croissant</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card delicacies">
-                            <div class="products__shape">
-                                <img src="./assets/img/delicacies3.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs5</h2>
-                                <h3 class="products__name">Croissant</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- =========== Coffe =========== -->
-                        <article class="products__card coffee">
-                            <div class="products__shape">
-                                <img src="./assets/img/coffee1.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs7</h2>
-                                <h3 class="products__name">Café tinto</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee">
-                            <div class="products__shape">
-                                <img src="./assets/img/coffee2.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs7</h2>
-                                <h3 class="products__name">Café tinto</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee">
-                            <div class="products__shape">
-                                <img src="./assets/img/coffee3.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs7</h2>
-                                <h3 class="products__name">Café tinto</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee">
-                            <div class="products__shape">
-                                <img src="./assets/img/coffee4.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs7</h2>
-                                <h3 class="products__name">Café tinto</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- =========== Cake =========== -->
-                        <article class="products__card cake">
-                            <div class="products__shape">
-                                <img src="./assets/img/cake1.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs6</h2>
-                                <h3 class="products__name">Pastel Glaseado</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake">
-                            <div class="products__shape">
-                                <img src="./assets/img/cake2.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs6</h2>
-                                <h3 class="products__name">Pastel Glaseado</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake">
-                            <div class="products__shape">
-                                <img src="./assets/img/cake3.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs6</h2>
-                                <h3 class="products__name">Pastel Glaseado</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake">
-                            <div class="products__shape">
-                                <img src="./assets/img/cake4.png" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="products__price">Bs6</h2>
-                                <h3 class="products__name">Pastel Glaseado</h3>
-
-                                <button class="button products__button">
-                                    <i class="bx bx-shopping-bag"></i>
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
             <section class="quality section" id="premium">
                 <div class="quality__container container">
                     <h2 class="section__title">
-                        Te ofrecemos el mejor café con la mejor preparación para ti!
+                        Nuestra misión
                     </h2>
 
                     <div class="quality__content grid">
                         <div class="quality__images">
-                            <img src="./assets/img/quality1.png" alt="" class="quality__img-big">
-                            <img src="./assets/img/quality2.png" alt="" class="quality__img-small">
+                            <img src="../images/cdc2.jpg" alt="" class="quality__img-big">
+<!--                             <img src="../images/us.jpg" alt="" class="quality__img-small"> -->
                         </div>
 
                         <div class="quality__data">
-                            <h1 class="quality__title">Café Premium</h1>
-                            <h2 class="quality__price">Bs 49,99</h2>
-                            <span class="quality__special">Precio especial</span>
+                            <h1 class="quality__title">Misión</h1>
 
                             <p class="quality__description">
-                                No te olvides que tenes que cambiar todas las burreras que ando escribiendo pq son muchas burreras
-                                ya no se que poner :)
+                            Satisfacer de manera eficaz y eficiente las necesidades de cuidado de salud de la comunidad. <br>
+                            Brindar a toda la comunidad la mejor atención medica basada en la evidencia científica y contenido ético, acompañando al paciente y su familia.
+                            Colaborar con la Educación del paciente, su familia y la sociedad, brindando cuidado y promoción de actitudes saludables.
                             </p>
-                            
-                            <div class="quality__buttons">
-                                <button class="button">
-                                    Comprar
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="blog section" id="blog">
-                <div class="blog__container container">
-                    <h2 class="section__title">
-                       Algunas notas de nuestro Blog.
-                    </h2>
-                    
-                    <div class="blog__content grid">
-                        <article class="blog__card">
-                            <div class="blog__image">
-                                <img src="./assets/img/blog1.png" alt="" class="blog__img">
-                                <a href="#" class="blog__button">
-                                    <i class="bx bx-right-arrow-alt"></i>
-                                </a>
-                            </div>
-                            
-                            <div class="blog__data">
-                                <h2 class="blog__title">
-                                    Cómo tostar café
-                                </h2>
-                                <p class="blog__description">
-                                    No te olvides que tenes que cambiar todas las burreras que ando escribiendo pq son muchas burreras
-                                    ya no se que poner :)
-                                </p>
-                            </div>
-                        </article>
-
-                        <article class="blog__card">
-                            <div class="blog__image">
-                                <img src="./assets/img/blog2.png" alt="" class="blog__img">
-                                <a href="#" class="blog__button">
-                                    <i class="bx bx-right-arrow-alt"></i>
-                                </a>
-                            </div>
-
-                            <div class="blog__data">
-                                <h2 class="blog__title">
-                                    Preparado de un café artesanal
-                                </h2>
-                                <p class="blog__description">
-                                    No te olvides que tenes que cambiar todas las burreras que ando escribiendo pq son muchas burreras
-                                ya no se que poner :)
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
         </main>
+        <footer class="footer">
+            <div class="footer__container container">
+                
+                <h1 class="footer__title">Clinica Mendieta</h1>
+
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <p class="footer__description">
+                            Subscribete para recibir más información
+                        </p>
+
+                        <form action="" class="footer__form" id="contact-form">
+                            <input type="mail" name="mail" placeholder="Dirección de email" class="footer__input" id="contact-user">
+                            <button type="submit" class="footer__button">
+                                <i class="bx bx-right-arrow-alt"></i>
+                            </button>
+                        </form>
+
+                        <p class="footer__messsage" id="contact-message"></p>
+                    </div>
+
+                    <div class="footer__data">
+                        <h2 class="footer__subtitle">Dirección</h2>
+                        <p class="footer__information">
+                            KM6 Doble vía la Guardia <br>
+                            Santa Cruz, Bolivia
+                        </p>
+                    </div>
+
+
+                    <div class="footer__data">
+                        <h2 class="footer__subtitle">Horario</h2>
+                        <p class="footer__information">
+                            Lunes - Sabado <br>
+                            8AM - 16PM
+                        </p>
+                    </div>
+                    <span class="footer__description">Cantidad de vistas en la pagina: {{ \App\Models\Log::showViews() }}</span>
+                </div>
+
+                <div class="footer__group">
+                    <ul class="footer__social">
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                    </ul>
+
+                    <span class="footer__copy">
+                        &#169; Clinica Mendieta Todos los derechos reservados
+                    </span>
+                </div>
+            </div>
+        </footer>
+
+
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="bx bx-up-arrow-alt"></i>
+        </a>
 
         <script src="../js/main.js"></script>
         <script src="../js/app.js"></script>
+
+                <!--=============== EMAIL JS ===============-->
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         
     </body>
 </html>

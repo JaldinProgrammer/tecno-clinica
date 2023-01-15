@@ -227,6 +227,14 @@ button {
   cursor: pointer;
 }
 
+.color-red {
+  color: hsl(0, 80%, 64%);
+}
+
+.color-green {
+  color: var(--first-color-blue);
+}
+
 
 
 @media screen and (max-width:1200px){
@@ -720,6 +728,15 @@ button {
   padding: 4rem 0 2.5rem;
 }
 
+.footer__form{
+  display: flex;
+}
+
+.footer__form{
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .footer__title{
   color: #fff;
   font-size: var(--h1-font-size);
@@ -826,7 +843,7 @@ button {
   position: fixed;
   right: 1rem;
   bottom: -30%;
-  background-color: #fff;
+  background-color: var(--first-color);
   box-shadow: 0 4px 12px hsla(206, 4%, 20%, .1);
   display: inline-flex;
   padding: .35rem;
@@ -1083,6 +1100,10 @@ button {
     margin-left: auto;
   }
 
+  .footer__form{
+    flex-direction: row;
+  }
+
 
   .section__title{
     padding-right: 15rem;
@@ -1125,7 +1146,7 @@ button {
     margin: auto 0;
   }
   .specialty__img{
-    width: 80px;
+    width: 200px;
     margin-bottom: 1.5rem;
   }
 

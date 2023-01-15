@@ -1234,7 +1234,7 @@ const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'uil-sun'
 
-// Previously selected topic (if user selected)
+
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 const currentColor = localStorage.getItem('current-color')
@@ -1256,16 +1256,13 @@ if (currentColor) {
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
 
-/*==================== DARK LIGHT THEME ====================*/
 let themeButtons = document.querySelectorAll('.theme-button2');
 
 themeButtons.forEach(color =>{
@@ -1275,3 +1272,41 @@ themeButtons.forEach(color =>{
         localStorage.setItem('current-color', dataColor);
     })
 })
+
+
+/*=============== EMAIL JS ===============*/
+
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+
+    if (contactUser.value === '') {
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Tienes que ingresar un correo'
+
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 3000);
+    }else{
+        emailjs.sendForm('service_2dhnn0e','template_x1525lr','#contact-form','bvHOl81qBq-9VSThN')
+            .then(() =>{
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'Tú correo se registro con exito!'
+
+                setTimeout(() => {
+                    contactMessage.textContent = ''
+                }, 3000);
+            }, (error) =>{
+                alert('OOPS! Tenemos algunas fallas...', error)
+            })
+
+        contactUser.value = ''
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)
