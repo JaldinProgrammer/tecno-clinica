@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>CEMM</title>
-        <link rel="shortcut icon" href="../images/logoo.png" type="image/x-icon">
+{{--        <link rel="shortcut icon" href="../images/logoo.png" type="image/x-icon">--}}
+        <link rel="shortcut icon" href="{{ asset('images/logoo.png') }}" type="image/x-icon">
 
-        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- Fonts -->
@@ -20,7 +21,7 @@
     <header class="header" id="header">
             <nav class="nav container">
                 <a href="#" class="nav__logo">
-                    <img src="../images/logoo.png" alt="" class="nav__logo-img">
+                    <img  src="{{ asset('images/logoo.png') }}" alt="" class="nav__logo-img">
                     CEMM
                 </a>
 
@@ -34,7 +35,7 @@
                             <a href="#specialty" class="nav__link">Ofrecemos</a>
                         </li>
 
-                        
+
                         <li class="nav__item">
                             <a href="#premium" class="nav__link">Especial</a>
                         </li>
@@ -65,7 +66,7 @@
                         <li class="nav__item">
                             <a href="{{ route('login') }}" class="nav__link">Ingresar</a>
                         </li>
-            
+
                                     @if (Route::has('register'))
                         <li class="nav__item">
                             <a href="{{ route('register') }}" class="nav__link">Registrarse</a>
@@ -73,7 +74,7 @@
                                     @endif
                                 @endauth
                         @endif
-                        
+
                     <div class="nav__close" id="nav-close">
                         <i class="bx bx-x"></i>
                     </div>
@@ -87,7 +88,7 @@
                     </div>
                 </div>
 
-                
+
             </nav>
         </header>
 
@@ -119,7 +120,7 @@
                     </div>
                 </div>
 
-                <img src="../images/bruno-rodrigues-279xIHymPYY-unsplash.jpg" alt="" class="home__img">
+                <img src="{{ asset('images/bruno-rodrigues-279xIHymPYY-unsplash.jpg') }}" alt="" class="home__img">
             </section>
 
             <section class="specialty section" id="specialty">
@@ -133,19 +134,19 @@
 
                     <div class="specialty__category">
                         <div class="specialty__group specialty__line">
-                            <img src="../images/268.png" alt="" class="specialty__img">
+                            <img src="{{ asset('images/268.png') }}" alt="" class="specialty__img">
 
                             <h3 class="specialty__title">Atención a Pacientes internos</h3>
                         </div>
 
                         <div class="specialty__group specialty__line">
-                            <img src="../images/20.png" alt="" class="specialty__img">
+                            <img src="{{ asset('images/20.png') }}" alt="" class="specialty__img">
 
                             <h3 class="specialty__title">Servicios de emergencia</h3>
                         </div>
 
                         <div class="specialty__group specialty__line">
-                            <img src="../images/12.png" alt="" class="specialty__img">
+                            <img src="{{ asset('images/12.png') }}" alt="" class="specialty__img">
 
                             <h3 class="specialty__title">Laboratorios e Instalaciones Técnicas</h3>
                         </div>
@@ -162,7 +163,7 @@
 
                     <div class="quality__content grid">
                         <div class="quality__images">
-                            <img src="../images/cdc2.jpg" alt="" class="quality__img-big">
+                            <img src="{{ asset('images/cdc2.jpg') }}" alt="" class="quality__img-big">
 <!--                             <img src="../images/us.jpg" alt="" class="quality__img-small"> -->
                         </div>
 
@@ -182,7 +183,7 @@
         </main>
         <footer class="footer">
             <div class="footer__container container">
-                
+
                 <h1 class="footer__title">Clinica Mendieta</h1>
 
                 <div class="footer__content grid">
@@ -242,11 +243,11 @@
             <i class="bx bx-up-arrow-alt"></i>
         </a>
 
-        <script src="../js/main.js"></script>
-        <script src="../js/app.js"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
 
                 <!--=============== EMAIL JS ===============-->
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        
+
     </body>
 </html>
