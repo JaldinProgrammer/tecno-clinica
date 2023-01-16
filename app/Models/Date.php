@@ -64,10 +64,28 @@ class Date extends Model
     }
 
     public function getByPatient($id){
+//        return DB::table('dates')
+//            ->join('reservations', 'dates.reservation_id', '=', 'reservations.id')
+//            ->join('users', 'reservations.user_id', '=', 'users.id')
+//            ->where('reservations.user_id',$id)
+//            ->get();
         return DB::table('dates')
+            ->select(
+                [
+                    'reservations.id as id',
+                    'patient.id as patientId',
+                    'patient.name as patientName',
+                    'doctor.id as doctorId',
+                    'doctor.name as doctorName',
+                    'reservations.description as description',
+                    'reservations.date as date',
+                    'reservations.time as time',
+                    'dates.diagnostic_id as diagnosticId'
+                ])
             ->join('reservations', 'dates.reservation_id', '=', 'reservations.id')
-            ->join('users', 'reservations.user_id', '=', 'users.id')
-            ->where('reservations.user_id',$id)
+            ->join('users as patient', 'reservations.user_id', '=', 'patient.id')
+            ->join('users as doctor', 'dates.user_id', '=', 'doctor.id')
+            ->where('reservations.user_id', $id )
             ->get();
     }
 

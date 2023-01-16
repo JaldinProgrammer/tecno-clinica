@@ -54,8 +54,8 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Fernando Crayola Mariaca',
-                'email' => 'crayolita@gmail.com',
-                'ci' => '32214241',
+                'email' => 'crayola@gmail.com',
+                'ci' => '11214241',
                 'cellphone' => '76431231',
                 'is_admin' => false,
                 'is_doctor' => true,

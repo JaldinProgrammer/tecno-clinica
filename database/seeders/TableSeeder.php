@@ -40,6 +40,26 @@ class TableSeeder extends Seeder
                 'route' => 'speciality.index',
                 'usingId' => false,
             ],
+            [
+                'table' => 'Ver Promociones',
+                'route' => 'promotion.index',
+                'usingId' => false,
+            ],
+            [
+                'table' => 'Ver Llaves',
+                'route' => 'key.index',
+                'usingId' => false,
+            ],
+            [
+                'table' => 'Ver Especialidades de doctores',
+                'route' => 'doctorSpeciality.index',
+                'usingId' => false,
+            ],
+            [
+                'table' => 'Ver Enfermedades',
+                'route' => 'disease.index',
+                'usingId' => false,
+            ],
         ]);
     }
 }

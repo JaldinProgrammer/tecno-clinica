@@ -32,7 +32,7 @@
                     <td>{{$item->date}}</td>
                     <td>{{$item->time}}</td>
                     @can('patient')
-                        <td>{{$item->DoctorName}}</td>
+                        <td>{{$item->doctorName}}</td>
                     @endcan
                     @canany(['doctor','admin'])
                         <td>{{$item->patientName}}</td>

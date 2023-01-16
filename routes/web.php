@@ -32,8 +32,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/unauthorized', [App\Http\Controllers\HomeController::class, 'unauthorized'])->name('unauthorized');
-Route::get('/report/1', [App\Http\Controllers\HomeController::class, 'report1'])->name('report1');
-Route::get('/report/2', [App\Http\Controllers\HomeController::class, 'report2'])->name('report2');
+Route::get('/report/1', [App\Http\Controllers\HomeController::class, 'report1'])->name('report.1');
+Route::get('/report/2', [App\Http\Controllers\HomeController::class, 'report2'])->name('report.2');
+Route::get('/report/3', [App\Http\Controllers\HomeController::class, 'report3'])->name('report.3');
+Route::get('/report/4', [App\Http\Controllers\HomeController::class, 'report4'])->name('report.4');
+Route::get('/report/5', [App\Http\Controllers\HomeController::class, 'report5'])->name('report.5');
 
 Route::post('/search', [TableController::class, 'search'])->name('search')->middleware(['admin', 'doctor']);
 
@@ -73,6 +76,13 @@ Route::prefix('date')->group(function () {
 // //    Route::get('delete/{id}', [ReservationController::class, 'delete'])->name('date.delete');
 // });
 
+//tus tablas serian:
+//keys
+//diseases
+//specialities
+//doctor_Specialities
+//promotion
+
 Route::prefix('disease')->group(function () {
     Route::get('create', [DiseaseController::class, 'create'])->name('disease.create');
     Route::get('index', [DiseaseController::class, 'index'])->name('disease.index');
@@ -108,7 +118,7 @@ Route::prefix('key')->group(function () {
 Route::prefix('doctorSpeciality')->group(function () {
     Route::get('create/{id}', [DoctorSpecialityController::class, 'create'])->name('doctorSpeciality.create')->middleware(['admin']);
     Route::get('index', [DoctorSpecialityController::class, 'index'])->name('doctorSpeciality.index')->middleware(['admin']);
-    Route::post('store', [DoctorSpecialityController::class, 'store'])->name('doctorSpeciality.store')->middleware(['admin']); //{users?,speciality?}
+    Route::post('store', [DoctorSpecialityController::class, 'store'])->name('doctorSpeciality.store')->middleware(['admin']);
     Route::get('delete/{id}', [DoctorSpecialityController::class, 'delete'])->name('doctorSpeciality.delete');
 });
 

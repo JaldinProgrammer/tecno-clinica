@@ -12,8 +12,8 @@
     <div class="p-5" >
         <table class="table table-striped" id="table">
             <thead>
-            <th class="prueba">id</th>
-            <th class="prueba">Nombre</th>
+            <th>id</th>
+            <th>Nombre</th>
             <th>Celular</th>
             <th>Identificacion</th>
             <th>Servicios</th>
@@ -26,12 +26,14 @@
                     <td>{{$item->cellphone}}</td>
                     <td>{{$item->ci}}</td>
                     <td>
-                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class=" btn btn-success btn-lg btn-block">Crear diagnostico</button></a>
+                        <a href="{{ route('diagnostic.create', $item->id) }}"><button type="button" class=" btn btn-success btn-lg btn-block">Crear diagnostico</button>
+                        </a>
                     </td>
                     <td>
                     @if($item->is_doctor==1)
                     <td>
-                        <a href="{{ route('doctorSpeciality.create', $item->id) }}"><button type="button" class="btn btn-success btn-lg btn-block">guardar nueva especialidad</button></a>
+                        <a href="{{ route('doctorSpeciality.create', $item->id) }}"><button type="button" class="btn btn-success">guardar nueva especialidad</button>
+                        </a>
                     </td>
                     @endif
                 </tr>
@@ -42,7 +44,7 @@
 
 @endsection
 
-@section('js')
+@section('script')
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>

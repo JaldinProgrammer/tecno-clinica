@@ -36,4 +36,26 @@ class Table extends Model
             ->get();
     }
 
+    public function keysQuantityPerTable() {
+
+        $reservaciones = Key::where('table_id',1)->count();
+        $diagnosticos = Key::where('table_id',2)->count();
+        $citas = Key::where('table_id',3)->count();
+        $usuarios = Key::where('table_id',4)->count();
+        $especialidades = Key::where('table_id',5)->count();
+        $promociones = Key::where('table_id',6)->count();
+        $llaves = Key::where('table_id',7)->count();
+        $especialiadesDocs = Key::where('table_id',8)->count();
+        return [
+            $reservaciones,
+            $diagnosticos,
+            $citas,
+            $usuarios,
+            $especialidades,
+            $promociones,
+            $llaves,
+            $especialiadesDocs,
+        ];
+    }
+
 }

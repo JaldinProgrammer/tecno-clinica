@@ -60,8 +60,6 @@
                             </li>
                         @endcan
                         @canany(['admin','doctor'])
-
-
                         <li class="nav__item">
                             <p class="nav__link">Buscar <i class="bx bx-chevron-down nav__arrow"></i></p>
                             <ul class="children color-switcher">
@@ -95,20 +93,34 @@
                                     Reportes <i class="bx bx-chevron-down nav__arrow"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 1</a>
-                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 2</a>
-                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 3</a>
-                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 4</a>
-                                    <a class="nav-link" href="{{ route('report1') }}">Reporte 5</a>
+                                    <a class="nav-link" href="{{ route('report.1') }}">Cuentas de usuario</a>
+                                    <a class="nav-link" href="{{ route('report.2') }}">Llaves de cada tabla</a>
+                                    <a class="nav-link" href="{{ route('report.3') }}">Reservas por mes</a>
+                                    <a class="nav-link" href="{{ route('report.4') }}">Citas por semana</a>
+                                    <a class="nav-link" href="{{ route('report.5') }}">Especialidades mas solicitadas</a>
+{{--                                    <a class="nav-link" href="{{ route('report.5') }}">Reporte 5</a>--}}
                                 </div>
                             </li>
+                                <li class="nav__item dropdown">
+                                    <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> Panel de control
+                                        <i class="bx bx-chevron-down nav__arrow"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        @can('admin')
+                                        <a class="nav-link" href="{{ route('key.create') }}">Crear llaves</a>
+                                        <a class="nav-link" href="{{ route('disease.create') }}">Crear enfermedades</a>
+                                        <a class="nav-link" href="{{ route('speciality.create') }}">Crear especialidad</a>
+                                        <a class="nav-link" href="{{ route('promotion.create') }}">Crear promocion</a>
+                                            <a class="nav-link" href="{{ route('key.index') }}">Ver llaves</a>
+                                            <a class="nav-link" href="{{ route('doctorSpeciality.index') }}">Especialidades de doctores</a>
+                                        @endcan
+
+                                            <a class="nav-link" href="{{ route('disease.index') }}">Ver enfermedades</a>
+                                            <a class="nav-link" href="{{ route('speciality.index') }}">Ver especialidad</a>
+                                            <a class="nav-link" href="{{ route('promotion.index') }}">Ver promocion</a>
+                                    </div>
+                                </li>
                         @endcanany
-{{--                        <li class="nav__item">--}}
-{{--                            <a class="nav__link" href="{{ route('user.index') }}">Usuarios</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav__item">--}}
-{{--                            <a class="nav__link" href="{{ route('diagnostic.index') }}">Diagnostico</a>--}}
-{{--                        </li>--}}
                         <li class="nav__item dropdown">
                             <a id="navbarDropdown" class="nav__link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <i class="bx bx-chevron-down nav__arrow"></i>
@@ -168,7 +180,7 @@
 <!-- Footer -->
 <footer class="footer">
             <div class="footer__container container">
-                
+
                 <h1 class="footer__title">Clinica Mendieta</h1>
 
                 <div class="footer__content grid">

@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('ERROR') }}</div>
 
                     <div class="card-body">
-                        PAGINA NO ENCONTRADA, LO SIENTO PANA APARENTEMENTE NO TENES LOS PERMISOS PORQUE NO MEJOR TE VAS PA BACK? PRIMO VOS NO TENES NADA QUE HACER ACA, INCREIBLE SEGUIS LEYENDO ESTE MENSAJE PEDAZO DE MMWB SALITE DE ACA ZZZWEB.
+                        EN ESTA PAGINA NO CONTAS CON LOS PERMISOS NECESARIOS
                     </div>
                 </div>
             </div>

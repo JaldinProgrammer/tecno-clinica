@@ -87,6 +87,78 @@ class KeySeeder extends Seeder
                 'key' => 'usuarios',
                 'table_id' => 4,
             ],
+            [
+                'key' => 'Especialidades',
+                'table_id' => 5,
+            ],
+            [
+                'key' => 'Speciality',
+                'table_id' => 5,
+            ],
+            [
+                'key' => 'Titulos',
+                'table_id' => 5,
+            ],
+            [
+                'key' => 'Promotions',
+                'table_id' => 6,
+            ],
+            [
+                'key' => 'Offers',
+                'table_id' => 6,
+            ],
+            [
+                'key' => 'Promociones',
+                'table_id' => 6,
+            ],
+            [
+                'key' => 'Promos',
+                'table_id' => 6,
+            ],
+            [
+                'key' => 'Ofertas',
+                'table_id' => 6,
+            ],
+            [
+                'key' => 'llaves',
+                'table_id' => 7,
+            ],
+            [
+                'key' => 'claves',
+                'table_id' => 7,
+            ],
+            [
+                'key' => 'complemento',
+                'table_id' => 7,
+            ],
+            [
+                'key' => 'Especialidades',
+                'table_id' => 8,
+            ],
+            [
+                'key' => 'Doctores',
+                'table_id' => 8,
+            ],
+            [
+                'key' => 'especialidades',
+                'table_id' => 8,
+            ],
+            [
+                'key' => 'titulos',
+                'table_id' => 8,
+            ],
+            [
+                'key' => 'rangos',
+                'table_id' => 8,
+            ],
+            [
+                'key' => 'Enfermedades',
+                'table_id' => 9,
+            ],
+            [
+                'key' => 'Casos',
+                'table_id' => 9,
+            ],
             //falta poner los demas indexes
         ]);
     }

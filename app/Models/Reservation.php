@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class Reservation extends Model
 {
@@ -61,4 +62,12 @@ class Reservation extends Model
         return $reservation->user_id;
     }
 
+    public function getReportOfReservationsByTime(){
+        return DB::table('reservations')
+            ->select(array('reservations.time', DB::raw('COUNT(reservations.time) as count')))
+            ->groupBy('reservations.time')
+            ->orderBy('reservations.time', 'desc')
+            ->get();
+
+    }
 }

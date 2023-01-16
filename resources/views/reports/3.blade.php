@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <h3>Cantidad de cuentas de usuario</h3>
+        <h3>Dias de la semana con mas visitas</h3>
         <canvas id="myChart"></canvas>
     </div>
 @endsection
@@ -12,15 +12,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const ctx = document.getElementById('myChart');
-        var users =  {{ Js::from($data) }};
+        var dataFromQuery =  {{ Js::from($data) }};
+        var labels =  {{ Js::from($labels) }};
         new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Doctores', 'Administradores', 'Pacientes'],
+                labels: labels,
                 datasets: [{
-                    label: '# de cuentas',
-                    data: users,
-                    borderWidth: 1
+                    label: '# de llaves',
+                    data: dataFromQuery,
+                    hoverOffset: 4
                 }]
             },
             options: {

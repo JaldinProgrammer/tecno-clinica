@@ -14,7 +14,7 @@ class DoctorSpecialitySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('specialities')->insert([
+        DB::table('doctor_specialities')->insert([
             [
                 'speciality_id' => 1,
                 'user_id' => 4

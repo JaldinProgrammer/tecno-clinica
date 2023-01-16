@@ -27,6 +27,7 @@ class DateController extends Controller
 
     public function show($id){ //patient
         $dates = $this->dateModel->getByPatient($id);
+//        dd($dates);
         return view('dates.index', compact('dates'));
     }
 

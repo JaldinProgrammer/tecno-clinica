@@ -15,14 +15,15 @@
         @endcan
         <table class="table table-striped" id="table">
             <thead>
-            
-            <th>name</th>
+
+            <th>Enfermedad</th>
+            <th>Opciones</th>
             <!-- <th>status</th> -->
             </thead>
             <tbody>
             @foreach ($diseases as $item)
                 <tr>
-                    
+
                     <td>{{$item->name}}</td>
                     <!-- <td>{{$item->status}}</td> -->
                     @can('admin')
@@ -30,7 +31,7 @@
                             <a href="{{ route('disease.delete', $item->id) }}"><button type="button" class="btn btn-danger">eliminar enfermedad</button></a>
                         </td>
                     @endcan
-                   
+
                 </tr>
             @endforeach
             </tbody>

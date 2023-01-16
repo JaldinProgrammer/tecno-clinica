@@ -16,22 +16,20 @@ class SpecialitySeeder extends Seeder
     {
         DB::table('specialities')->insert([
             [
-                [
-                    'name' => 'Cirujano',
-                ],
-                [
-                    'name' => 'Pediatra',
-                ],
-                [
-                    'name' => 'Cirujano',
-                ],
-                [
-                    'name' => 'Nefrologo',
-                ],
-                [
-                    'name' => 'Infectologo',
-                ],
-            ]
+                'name' => 'Cirujano',
+            ],
+            [
+                'name' => 'Pediatra',
+            ],
+            [
+                'name' => 'Dermatologo',
+            ],
+            [
+                'name' => 'Nefrologo',
+            ],
+            [
+                'name' => 'Infectologo',
+            ],
         ]);
     }
 }
